@@ -1,0 +1,22 @@
+# Python / Django
+*.pyc
+__pycache__/
+*.log
+*.sqlite3
+db.sqlite3
+
+# Entorno virtual
+env/
+venv/
+*.egg-info/
+
+# Variables de entorno
+.env
+
+# Carpetas de VS Code / PyCharm
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
