@@ -7,24 +7,28 @@ Paso número uno:
         py -3.12 -m venv env >>ENTER<<
         env\Scripts\activate >>ENTER<<
     La siguiente línea deberá de empezar así: (env)
+Paso número dos:    
     El siguiente comando se encargará de instalar las librerías necesarias en el entorno virtual
         pip install -r requirements.txt >>ENTER<<
-    Si aún no se ha creado el archivo ".env", deberá de crearlo. En la misma carpeta en donde encuentra el archivo "manage.py", cree otro que se llame ".env" y anexe lo siguiente:
-        DB_NAME=biorutas_web
-        DB_USER=root
-        DB_PASSWORD=
-        DB_HOST=localhost
-        DB_PORT=3306
-        SECRET_KEY=123456789
-        DEBUG=True
-    Finalmente en el símbolo del sistema (CMD) ejecute aún con el entorno virtual activo los siguientes comandos en líneas diferentes
-        py manage.py migrate >>ENTER<<
-        py manage.py runserver >>ENTER<<
-    Ahora puede ingresar a la página: http://127.0.0.1:8000/ para comprobar la conexión.
+    Si aún no se ha creado el archivo ".env", deberá de crearlo. Si ya lo creó, siga con el paso número tres.
+        En la misma carpeta en donde encuentra el archivo "manage.py", cree otro que se llame ".env" y anexe lo siguiente:
+            DB_NAME=biorutas_web
+            DB_USER=root
+            DB_PASSWORD=
+            DB_HOST=localhost
+            DB_PORT=3306
+            SECRET_KEY=123456789
+            DEBUG=True
+        Finalmente en el símbolo del sistema (CMD) ejecute aún con el entorno virtual activo los siguientes comandos en líneas diferentes
+            py manage.py migrate >>ENTER<<
+            py manage.py runserver >>ENTER<<
+    Paso número tres:
     Para ingresar al servidor primero debe activarlo. En el CMD con el entorno virtual activo, ejecute el siguiente comando:
         py manage.py runserver
         (Aparecerá algo "como Starting development server at http://127.0.0.1:8000/")
-    URL del servidor: http://127.0.0.1:8000/ >>ENTER<<
+    Ahora puede ingresar a la página: http://127.0.0.1:8000/ para comprobar la conexión.
+    URL del servidor con Django:
+    http://127.0.0.1:8000/admin/login/?next=/admin/
     Las credenciales del super usuario son: 
     Usuario: admin
     Contraseña: BioRutas (Con mayúsculas)
