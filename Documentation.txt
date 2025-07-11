@@ -36,3 +36,8 @@ Paso número dos:
     Email: >>ENTER<< (Déjelo vacío)
     Contraseña: BioRutas (Con mayúsculas)
     Con las mismas credenciales puede ingresar al entorno de Django.
+    Paso final: abrir el entorno virtual y encender el servidor con los siguientes comandos en líneas separadas:
+        cd /d "C:\Biorutas_web" >>ENTER<<
+        env\Scripts\activate >>ENTER<<
+        py manage.py runserver >>ENTER<<
+        y CTRL+C para pausar el entorno virtual.
