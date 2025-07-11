@@ -29,6 +29,10 @@ Paso número dos:
     Ahora puede ingresar a la página: http://127.0.0.1:8000/ para comprobar la conexión.
     URL del servidor con Django:
     http://127.0.0.1:8000/admin/login/?next=/admin/
-    Las credenciales del super usuario son: 
+    Si no ha creado el super usuario, créelo en el CMD en el entorno virtual con el comando:
+    py manage.py createsuperuser
+    Las credenciales del super usuario pueden ser: 
     Usuario: admin
+    Email: >>ENTER<< (Déjelo vacío)
     Contraseña: BioRutas (Con mayúsculas)
+    Con las mismas credenciales puede ingresar al entorno de Django.
