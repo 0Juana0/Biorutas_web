@@ -33,3 +33,14 @@ class Reserva(models.Model):
 
     def __str__(self):
         return f"{self.usuario.username} - {self.paquete.nombre}"
+    
+class RegistroCliente(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100) 
+    numero_telefono = models.CharField(max_length=15)
+    correo = models.EmailField(unique=True)
+    contraseña = models.CharField(max_length=128) 
+    fecha_registro = models.DateTimeField(auto_now_add=True)
+
+def __str__(self):
+        return f"{self.nombre} {self.apellido}"
