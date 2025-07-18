@@ -1,0 +1,16 @@
+body.bg-dark-blue {
+  background-color: #005577;
+}
+
+.login-container input::placeholder {
+  color: #aaa;
+}
+
+.login-container a {
+  text-decoration: none;
+  color: #333;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}

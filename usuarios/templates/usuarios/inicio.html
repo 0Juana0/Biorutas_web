@@ -1,0 +1,9 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head><title>Bienvenido</title></head>
+<body>
+    <h1>Hola {{ nombre }} 👋</h1>
+    <a href="{% url 'usuarios:logout' %}">Cerrar sesión</a>
+</body>
+</html>
