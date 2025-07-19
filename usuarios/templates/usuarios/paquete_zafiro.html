@@ -1,3 +1,5 @@
+{% load static %}
+{% load widget_tweaks %}
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -16,7 +18,7 @@
             <div class="container">
                 <!-- Logo a la izquierda -->
                 <a class="navbar-brand" href="/home/index.html">
-                    <img src="img/logo.png" alt="Travel Logo" height="40">
+                    <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
                 </a>
                 
                 <!-- Botón móvil -->
@@ -68,50 +70,50 @@
 
     <div class="container my-5">
     <!-- Título -->
-    <h2 class="text-center section-title">Paquete oro - Eje Cafetero</h2>
+    <h2 class="text-center section-title">Paquete zafiro - Eje Cafetero</h2>
 
     <!-- Imagen principal -->
-    <img id="mainImage" src="img/paquete-principal.jpg" class="main-image" alt="Imagen principal" />
+    <img id="mainImage" src="{% static 'usuarios/imgpacks/san-vicente-01-870x555.jpg' %}" class="main-image" alt="Imagen principal" />
 
     <!-- Miniaturas -->
     <div class="thumbnail-container">
-        <img src="{% static 'usuarios/imgpacks/mini1.jpg' %}" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
-        <img src="{% static 'usuarios/imgpacks/mini2.jpg' %}" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
-        <img src="{% static 'usuarios/imgpacks/mini3.jpg' %}" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/terma-en-la-roca-san-vicente.jpeg' %}" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/Portada-El-Cairo.jpg' %}" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/parque-los-nevados-eje-cafetero.jpg' %}" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
     </div>
 
     <div class="row mt-5">
         <!-- Sección izquierda -->
         <div class="col-lg-8 pe-lg-5">
         <h4 class="section-title">Descripción</h4>
-        <p>Vive una experiencia auténtica recorriendo los pueblos más pintorescos y los miradores más espectaculares del Quindío a bordo de un clásico Jeep Willy’s, el vehículo emblemático de la región. Disfruta de paisajes cafeteros, arquitectura tradicional y paradas en lugares secretos que solo los locales conocen, acompañado por un guía experto en la cultura de la zona.</p>
+        <p>Vive una experiencia única cabalgando por los paisajes espectaculares de Santa Rosa de Cabal. Descubre cascadas ocultas, fincas cafeteras tradicionales y disfruta de la auténtica cultura rural de Risaralda, todo acompañado por guías expertos y caballos bien entrenados.</p>
 
         <h4 class="section-title">¿Qué incluye?</h4>
         <div class="row">
             <div class="col-sm-6">
             <ul class="list-unstyled">
-                <li><span class="icon-check">✔</span> Recorrido en Jeep Willy’s (típico de la región)</li>
-                <li><span class="icon-check">✔</span> Guía turístico local (español/inglés)</li>
-                <li><span class="icon-check">✔</span> Paradas en 2 pueblos patrimonio (Filandia, Salento o Pijao)</li>
-                <li><span class="icon-check">✔</span> Visita a miradores panorámicos (Valle de Cocora, Alto de la Cruz)</li>
-                <li><span class="icon-check">✔</span> Degustación de café en finca tradicional</li>
+                <li><span class="icon-check">✔</span> Cabalgata guiada (2.5 horas) por senderos naturales</li>
+                <li><span class="icon-check">✔</span> Visita a cascada escondida (oportunidad para refrescarse)</li>
+                <li><span class="icon-check">✔</span> Degustación de café de la región en finca tradicional</li>
+                <li><span class="icon-check">✔</span> Almuerzo campesino (sancocho o bandeja paisa)</li>
+                <li><span class="icon-check">✔</span> Guía local conocedor de la zona</li>
             </ul>
             </div>
             <div class="col-sm-6">
             <ul class="list-unstyled">
                 <li><span class="icon-check">✔</span> Entrada a reserva natural</li>
-                <li><span class="icon-close">✘</span>Bebidas adicionales no incluidas</li>
+                <li><span class="icon-close">✘</span> Transporte hasta el punto de encuentro</li>
             </ul>
             </div>
         </div>
 
         <h4 class="section-title">Itinerario</h4>
         <ol>
-            <li>Salida desde Armenia – 8:00 a.m.</li>
-            <li>Primer pueblo mágico – Recorrido por calles coloridas y artesanías</li>
-            <li>Mirador natural – Vistas panorámicas del paisaje cafetero</li>
-            <li>Degustación de café – Experiencia en finca tradicional</li>
-            <li>Almuerzo típico – Sabores locales en restaurante campestre</li>
+            <li>Punto de encuentro: Finca en Santa Rosa de Cabal - 8:30 a.m.</li>
+            <li>Cabalgata por montañas y cafetales – Vistas panorámicas</li>
+            <li>Parada en cascada natural – Tiempo para fotos y descanso</li>
+            <li>Degustación de café artesanal – Explicación del proceso</li>
+            <li>Almuerzo típico en finca con productos locales</li>
         </ol>
 
         <h4 class="section-title">Mapa del recorrido</h4>
