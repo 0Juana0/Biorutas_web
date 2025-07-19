@@ -8,10 +8,11 @@
   <title>BioRutas - Paquetes Turísticos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
-  <link rel="stylesheet" href="/navbar.css">
+  
+  <link rel="stylesheet" href="{% static 'usuarios\reservas.css' %}">
+  <link rel="stylesheet" href="{% static 'usuarios\navbar.css' %}">
 
-</head> 
+</head>
 <body>
     
     <!-- Menú principal -->
@@ -20,7 +21,7 @@
         <div class="container">
             <!-- Logo a la izquierda -->
             <a class="navbar-brand" href="/home/index.html">
-                <img src="/home/img/logo.png" alt="Travel Logo" height="40">
+                <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
             </a>
             
             <!-- Botón móvil -->
@@ -135,7 +136,7 @@
               <div class="card card-horizontal">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="img/diamante.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Diamante" />
+                    <img src="{% static 'usuarios/imgre/diamante.jpg' %}" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Diamante" />
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -158,7 +159,7 @@
     <div class="card card-horizontal">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="img/platino.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Platino" />
+          <img src="{% static 'usuarios/imgre/platino.jpg' %}" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Platino" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -180,7 +181,7 @@
     <div class="card card-horizontal">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="img/oro.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Oro" />
+          <img src="{% static 'usuarios/imgre/oro.jpg' %}" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Oro" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -202,7 +203,7 @@
     <div class="card card-horizontal">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="img/esmeralda.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Esmeralda" />
+          <img src="{% static 'usuarios/imgre/esmeralda.jpg' %}" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Esmeralda" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -224,7 +225,7 @@
     <div class="card card-horizontal">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="img/zafiro.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Zafiro" />
+          <img src="{% static 'usuarios/imgre/zafiro.jpg' %}" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Zafiro" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -246,7 +247,7 @@
     <div class="card card-horizontal">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="img/aventura.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Aventura" />
+          <img src="{% static 'usuarios/imgre/aventura.jpg' %}" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Aventura" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
