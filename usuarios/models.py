@@ -19,18 +19,6 @@ class PaqueteViaje(models.Model):
     def __str__(self):
         return self.nombre
 
-
-class Reserva(models.Model):
-    ESTADOS = [
-        ('pendiente', 'Pendiente'),
-        ('pagado', 'Pagado'),
-        ('cancelado', 'Cancelado'),
-    ]
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    paquete = models.ForeignKey(PaqueteViaje, on_delete=models.CASCADE)
-    fecha_reserva = models.DateTimeField(auto_now_add=True)
-    estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente')
-
     def __str__(self):
         return f"{self.usuario.username} - {self.paquete.nombre}"
     
@@ -42,5 +30,18 @@ class RegistroCliente(models.Model):
     contraseña = models.CharField(max_length=128) 
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
+class Reserva(models.Model):
+    ESTADOS = [
+        ('pendiente', 'Pendiente'),
+        ('pagado', 'Pagado'),
+        ('cancelado', 'Cancelado'),
+    ]
+    usuario = models.ForeignKey(RegistroCliente, on_delete=models.CASCADE)
+    paquete = models.ForeignKey(PaqueteViaje, on_delete=models.CASCADE)
+    fecha_reserva = models.DateTimeField(auto_now_add=True)
+    estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente')
+
+
 def __str__(self):
         return f"{self.nombre} {self.apellido}"
+
