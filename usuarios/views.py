@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import make_password
 from .forms import RegistroClienteForm
 from django.contrib.auth.hashers import check_password 
-from .models import RegistroCliente, Reserva
+from .models import RegistroCliente, Paquete
 
 def registro_cliente(request):
     if request.method == 'POST':
@@ -59,12 +59,12 @@ def logout_view(request):
     request.session.flush()   # borra TODA la sesión
     return redirect('usuarios:login')
 
-def reservas(request):
+def paquetes(request):
     #Verificar que el usuario esté logueado
     cliente_id = request.session.get('cliente_id')
     if not cliente_id:
         return redirect('usuarios:login')
     
     #Obtener las reservas del cliente 
-    reservas = Reserva.objects.filter(usuario_id=cliente_id)
-    return render(request,'usuarios/reservas.html', {'reservas':reservas})
+    paquetes = Paquete.objects.filter(usuario_id=cliente_id)
+    return render(request,'usuarios/paquetes.html', {'paquetes':paquetes})

@@ -30,7 +30,7 @@ class RegistroCliente(models.Model):
     contraseña = models.CharField(max_length=128) 
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
-class Reserva(models.Model):
+class Paquete(models.Model):
     ESTADOS = [
         ('pendiente', 'Pendiente'),
         ('pagado', 'Pagado'),
