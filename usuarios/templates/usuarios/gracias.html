@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="{% static 'usuarios\navbar.css' %}"> 
     <link rel="stylesheet" href="{% static 'usuarios\footer.css' %}"> 
 
-    <link rel="stylesheet" href="/navbar.css">
-
+    
 </head>
 
 <body>
@@ -23,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'usuarios:gracias' %}" >
                 <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
             </a>
             
@@ -38,16 +37,16 @@
                 <!-- Menú central -->
                 <ul class="navbar-nav center-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Reservas/reservas.html">Paquetes</a>
+                        <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="hotels.html">Hotels</a>
+                        <a class="nav-link" href="">Hotels</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="flights.html">Flights</a>
+                        <a class="nav-link" href="">Flights</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="bookings.html">Bookings</a>
+                        <a class="nav-link" href="">Bookings</a>
                     </li>
                 </ul>
                 

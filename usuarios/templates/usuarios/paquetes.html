@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="/home/index.html">
+            <a class="navbar-brand" href="{% url 'usuarios:gracias' %}">
                 <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
             </a>
             
@@ -35,7 +35,7 @@
                 <!-- Menú central -->
                 <ul class="navbar-nav center-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Reservas/reservas.html">Reservas</a>
+                        <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Reservas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="hotels.html">Hotels</a>
