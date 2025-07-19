@@ -7,17 +7,14 @@
     <title>Página de Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="
-=======
+
     <link rel="stylesheet" href="{% static 'usuarios\home.css' %}"> 
-<<<<<<< HEAD
+
     <link rel="stylesheet" href="{% static 'usuarios\navbar.css' %}"> 
     <link rel="stylesheet" href="{% static 'usuarios\footer.css' %}"> 
-=======
->>>>>>> 6628d0024d1e05248b1d9a88248c1b343ebc1baf
+
     <link rel="stylesheet" href="/navbar.css">
->>>>>>> 56cab9eeec1dcad8b35077232ac838a8a5ee8dc1
+
 </head>
 
 <body>
@@ -27,7 +24,7 @@
         <div class="container">
             <!-- Logo a la izquierda -->
             <a class="navbar-brand" href="index.html">
-                <img src="img/logo.png" alt="Travel Logo" height="40">
+                <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
             </a>
             
             <!-- Botón móvil -->
@@ -92,7 +89,7 @@
                 <a href="#" class="btn btn-primary btn-lg px-4">DESCUBRE MAS</a>
             </div>
             <div class="col-lg-6 d-flex justify-content-center align-items-center position-relative">
-                <img src="img/viajera.png" alt="Mujer viajera" class="img-fluid hero-img animate-viajera" loading="lazy">
+                <img src="{% static 'usuarios/img/viajera.png' %}" alt="Mujer viajera" class="img-fluid hero-img animate-viajera" loading="lazy">
                 <!-- Aviones decorativos -->
                 <svg class="plane plane-1" width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
                     <path d="M10 30 L50 30 L30 10 L30 50 Z" fill="#009fe3"/>
@@ -109,22 +106,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 col-md-3">
-                    <img src="img/Section → 1.svg.png" alt="Rutas totales" class="stats-icon" loading="lazy">
+                    <img src="{% static 'usuarios/img/Section → 1.svg.png' %}" alt="Rutas totales" class="stats-icon" loading="lazy">
                     <h3 class="stats-number">932M</h3>
                     <p class="stats-label">Rutas totales</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <img src="img/Section → 2.svg.png" alt="Campañas cerradas" class="stats-icon" loading="lazy">
+                    <img src="{% static 'usuarios/img/Section → 2.svg.png' %}" alt="Campañas cerradas" class="stats-icon" loading="lazy">
                     <h3 class="stats-number">24M</h3>
                     <p class="stats-label">Campañas cerradas</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <img src="img/Section → 3.svg.png" alt="Gente feliz" class="stats-icon" loading="lazy">
+                    <img src="{% static 'usuarios/img/Section → 3.svg.png' %}" alt="Gente feliz" class="stats-icon" loading="lazy">
                     <h3 class="stats-number">10M</h3>
                     <p class="stats-label">Gente feliz</p>
                 </div>
                 <div class="col-6 col-md-3">
-                    <img src="img/Section → 4.svg.png" alt="Voluntarios" class="stats-icon" loading="lazy">
+                    <img src="{% static 'usuarios/img/Section → 4.svg.png' %}" alt="Voluntarios" class="stats-icon" loading="lazy">
                     <h3 class="stats-number">65M</h3>
                     <p class="stats-label">Nuestros voluntarios</p>
                 </div>
@@ -143,14 +140,12 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-9">
-                <div class="video-wrapper">
-                    <!-- Reemplaza con tu enlace de YouTube/Vimeo -->
-                    <iframe 
-                        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?rel=0&modestbranding=1" 
-                        title="Video promocional de viajes" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                    ></iframe>
+                <div class="video-wrapper text-center">
+                    <!-- Video local -->
+                    <video controls width="100%" preload="auto">
+                        <source src="{% static 'usuarios/img/video.mp4' %}" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
                 </div>
             </div>
         </div>
@@ -164,35 +159,35 @@
             <div class="row g-3">
                 <div class="col-12 col-md-4">
                     <div class="popular-card">
-                        <img src="img/montaña.jpeg" alt="Cruceros" class="popular-img" loading="lazy">
+                        <img src="{% static 'usuarios/img/montaña.jpeg' %}" alt="Cruceros" class="popular-img" loading="lazy">
                         <span class="popular-title">Paquete Platino</span>
                     </div>
                     <div class="popular-card mt-3">
-                        <img src="img/pueblo.jpeg" alt="Tour de museos" class="popular-img" loading="lazy">
+                        <img src="{% static 'usuarios/img/pueblo.jpeg' %}" alt="Tour de museos" class="popular-img" loading="lazy">
                         <span class="popular-title">Paquete Aventura</span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="popular-card popular-card-lg">
-                        <img src="img/palmeras.jpeg" alt="Playas" class="popular-img" loading="lazy">
+                        <img src="{% static 'usuarios/img/palmeras.jpeg' %}" alt="Playas" class="popular-img" loading="lazy">
                         <span class="popular-title">Paquete Diamante</span>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="popular-card">
-                        <img src="img/montañas2.jpeg" alt="Ciudades" class="popular-img" loading="lazy">
+                        <img src="{% static 'usuarios/img/montañas2.jpeg' %}" alt="Ciudades" class="popular-img" loading="lazy">
                         <span class="popular-title">Paquete Oro</span>
                     </div>
                     <div class="row g-3 mt-1">
                         <div class="col-6">
                             <div class="popular-card">
-                                <img src="img/torrentismo.jpeg" alt="Comida local" class="popular-img" loading="lazy">
+                                <img src="{% static 'usuarios/img/torrentismo.jpeg' %}" alt="Comida local" class="popular-img" loading="lazy">
                                 <span class="popular-title">Paquete Zafiro</span>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="popular-card">
-                                <img src="img/termales.jpeg" alt="Senderismo" class="popular-img" loading="lazy">
+                                <img src="{% static 'usuarios/img/termales.jpeg' %}" alt="Senderismo" class="popular-img" loading="lazy">
                                 <span class="popular-title">Paquete Esmeralda</span>
                             </div>
                         </div>
@@ -211,22 +206,22 @@
             </div>
             <div class="special-offers-row">
                 <div class="offer-card">
-                    <img src="img/pueblo.jpeg" alt="Oferta 1" class="offer-img mb-2" loading="lazy">
+                    <img src="{% static 'usuarios/img/pueblo.jpeg' %}" alt="Oferta 1" class="offer-img mb-2" loading="lazy">
                     <div class="offer-date">Último día: 13 Marzo</div>
                     <div class="offer-desc">Hasta 50% de descuento</div>
                 </div>
                 <div class="offer-card">
-                    <img src="img/termales.jpeg" alt="Oferta 2" class="offer-img mb-2" loading="lazy">
+                    <img src="{% static 'usuarios/img/termales.jpeg' %}" alt="Oferta 2" class="offer-img mb-2" loading="lazy">
                     <div class="offer-date">Último día: 13 Marzo</div>
                     <div class="offer-desc">Cupón de $200 para tours</div>
                 </div>
                 <div class="offer-card">
-                    <img src="img/palmeras.jpeg" alt="Oferta 3" class="offer-img mb-2" loading="lazy">
+                    <img src="{% static 'usuarios/img/palmeras.jpeg' %}" alt="Oferta 3" class="offer-img mb-2" loading="lazy">
                     <div class="offer-date">Último día: 13 Marzo</div>
                     <div class="offer-desc">Hoteles en ciudades</div>
                 </div>
                 <div class="offer-card">
-                    <img src="img/torrentismo.jpeg" alt="Oferta 4" class="offer-img mb-2" loading="lazy">
+                    <img src="{% static 'usuarios/img/torrentismo.jpeg' %}" alt="Oferta 4" class="offer-img mb-2" loading="lazy">
                     <div class="offer-date">Último día: 13 Marzo</div>
                     <div class="offer-desc">Tours en kayak</div>
                 </div>
@@ -243,7 +238,7 @@
                     <a href="#" class="btn btn-primary">Reservar ahora</a>
                 </div>
                 <div class="col-md-6 promo-img-col">
-                    <img src="img/fuego.jpg" alt="Promoción especial" class="promo-img" loading="lazy">
+                    <img src="{% static 'usuarios/img/fuego.jpg' %}" alt="Promoción especial" class="promo-img" loading="lazy">
                 </div>
             </div>
         </div>
@@ -264,11 +259,11 @@
                 <div class="reviews-role">Product Manager, Apple Inc.</div>
             </div>
             <div class="reviews-avatars">
-                <img src="img/1.png" alt="Cliente 1" class="reviews-avatar" loading="lazy">
-                <img src="img/2.png" alt="Cliente 2" class="reviews-avatar" loading="lazy">
-                <img src="img/3.png" alt="Cliente 3" class="reviews-avatar" loading="lazy">
-                <img src="img/4.png" alt="Cliente 4" class="reviews-avatar" loading="lazy">
-                <img src="img/5.png" alt="Cliente 5" class="reviews-avatar" loading="lazy">
+                <img src="{% static 'usuarios/img/1.png' %}" alt="Cliente 1" class="reviews-avatar" loading="lazy">
+                <img src="{% static 'usuarios/img/2.png' %}" alt="Cliente 2" class="reviews-avatar" loading="lazy">
+                <img src="{% static 'usuarios/img/3.png' %}" alt="Cliente 3" class="reviews-avatar" loading="lazy">
+                <img src="{% static 'usuarios/img/4.png' %}" alt="Cliente 4" class="reviews-avatar" loading="lazy">
+                <img src="{% static 'usuarios/img/5.png' %}" alt="Cliente 5" class="reviews-avatar" loading="lazy">
             </div>
         </div>
     </section>
@@ -278,16 +273,16 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-6 col-md-3 text-center mb-4 mb-md-0">
-                    <img src="/home/img/keratuma.PNG" alt="Jetstar" class="airline-logo" loading="lazy">
+                    <img src="{% static 'usuarios/img/keratuma.PNG' %}" alt="Jetstar" class="airline-logo" loading="lazy">
                 </div>
                 <div class="col-6 col-md-3 text-center mb-4 mb-md-0">
-                    <img src="/home/img/termales1.jpeg" alt="Expedia" class="airline-logo" loading="lazy">
+                    <img src="{% static 'usuarios/img/termales1.jpeg' %}" alt="Expedia" class="airline-logo" loading="lazy">
                 </div>
                 <div class="col-6 col-md-3 text-center">
-                    <img src="/home/img/gym.jpg" alt="Qantas" class="airline-logo" loading="lazy">
+                    <img src="{% static 'usuarios/img/gym.jpg' %}" alt="Qantas" class="airline-logo" loading="lazy">
                 </div>
                 <div class="col-6 col-md-3 text-center">
-                    <img src="/home/img/grupo empresarial.png" alt="Alitalia" class="airline-logo" loading="lazy">
+                    <img src="{% static 'usuarios/img/grupo empresarial.png' %}" alt="Alitalia" class="airline-logo" loading="lazy">
                 </div>
             </div>
         </div>
@@ -298,7 +293,7 @@
         <div class="footer-top">
         <!-- Logo e Info -->
         <div class="footer-brand">
-            <img src="img/logo.png" alt="Biorutas Logo" width="70" height="60">
+            <img src="{% static 'usuarios/img/logo.png' %}" alt="Biorutas Logo" width="70" height="60">
             <h2 class="footer-logo-text">Biorutas</h2>
         </div>
 
