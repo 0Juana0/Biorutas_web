@@ -6,9 +6,9 @@
     <title>Paquete Esmeralda - BioRutas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/navbar.css">
-    <link rel="stylesheet" href="/footer.css">
-    <link rel="stylesheet" href="/packs/styles.css">
+    <link rel="stylesheet" href="{% static 'usuarios/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'usuarios/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'usuarios/packs.css' %}">
     </head>
     <body>
     <header class="sticky-top bg-white main-header">
@@ -75,9 +75,9 @@
 
     <!-- Miniaturas -->
     <div class="thumbnail-container">
-        <img src="img/mini1.jpg" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
-        <img src="img/mini2.jpg" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
-        <img src="img/mini3.jpg" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/mini1.jpg' %}" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/mini2.jpg' %}" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/mini3.jpg' %}" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
     </div>
 
     <div class="row mt-5">
@@ -169,7 +169,7 @@
             <div class="footer-top">
             <!-- Logo e Info -->
             <div class="footer-brand">
-                <img src="img/logo.png" alt="Biorutas Logo" width="70" height="60">
+                <img src="{% static 'usuarios/img/logo.png' %}" alt="Biorutas Logo" width="70" height="60">
                 <h2 class="footer-logo-text">Biorutas</h2>
             </div>
 
