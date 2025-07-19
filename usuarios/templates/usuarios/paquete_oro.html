@@ -1,3 +1,5 @@
+{% load static %}
+{% load widget_tweaks %}
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -68,48 +70,50 @@
 
     <div class="container my-5">
     <!-- Título -->
-    <h2 class="text-center section-title">Paquete platino - Eje Cafetero</h2>
+    <h2 class="text-center section-title">Paquete oro - Eje Cafetero</h2>
 
     <!-- Imagen principal -->
-    <img id="mainImage" src="{% static 'usuarios/imgpacks/ter.jpg' %}" class="main-image" alt="Imagen principal" />
+    <img id="mainImage" src="img/paquete-principal.jpg" class="main-image" alt="Imagen principal" />
 
     <!-- Miniaturas -->
     <div class="thumbnail-container">
-        <img src="{% static 'usuarios/imgpacks/cabaloo.jpg' %}" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
-        <img src="{% static 'usuarios/imgpacks/cafe.jpg' %}" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
-        <img src="{% static 'usuarios/imgpacks/SALENTO-min-1.jpg' %}" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/mini1.jpg' %}" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/mini2.jpg' %}" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/mini3.jpg' %}" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
     </div>
 
     <div class="row mt-5">
         <!-- Sección izquierda -->
         <div class="col-lg-8 pe-lg-5">
         <h4 class="section-title">Descripción</h4>
-        <p>Embárcate en una auténtica cabalgata por los paisajes rurales de Filandia, combinando la emoción de montar a caballo con la tradición cafetera y la calidez de la cultura quindiana. Recorre senderos entre montañas, disfruta de un café artesanal recién tostado y vive una experiencia campesina inolvidable guiada por expertos locales.</p>
+        <p>Vive una experiencia auténtica recorriendo los pueblos más pintorescos y los miradores más espectaculares del Quindío a bordo de un clásico Jeep Willy’s, el vehículo emblemático de la región. Disfruta de paisajes cafeteros, arquitectura tradicional y paradas en lugares secretos que solo los locales conocen, acompañado por un guía experto en la cultura de la zona.</p>
 
         <h4 class="section-title">¿Qué incluye?</h4>
         <div class="row">
             <div class="col-sm-6">
             <ul class="list-unstyled">
-                <li><span class="icon-check">✔</span> Cabalgata guiada (2 horas) por fincas y bosques</li>
-                <li><span class="icon-check">✔</span> Visita a trapiche artesanal o taller local</li>
-                <li><span class="icon-check">✔</span> Café de finca tostado al momento + snack tradicional</li>
-            </ul><li><span class="icon-check">✔</span> Almuerzo típico campesino (bandeja paisa)</li>
-            <li><span class="icon-check">✔</span> Guía bilingüe especializado en cultura cafetera</li>
+                <li><span class="icon-check">✔</span> Recorrido en Jeep Willy’s (típico de la región)</li>
+                <li><span class="icon-check">✔</span> Guía turístico local (español/inglés)</li>
+                <li><span class="icon-check">✔</span> Paradas en 2 pueblos patrimonio (Filandia, Salento o Pijao)</li>
+                <li><span class="icon-check">✔</span> Visita a miradores panorámicos (Valle de Cocora, Alto de la Cruz)</li>
+                <li><span class="icon-check">✔</span> Degustación de café en finca tradicional</li>
+            </ul>
             </div>
             <div class="col-sm-6">
             <ul class="list-unstyled">
-                <li><span class="icon-check">✔</span> Transporte (opcional con costo adicional)
+                <li><span class="icon-check">✔</span> Entrada a reserva natural</li>
+                <li><span class="icon-close">✘</span>Bebidas adicionales no incluidas</li>
             </ul>
             </div>
         </div>
 
         <h4 class="section-title">Itinerario</h4>
         <ol>
-            <li>Salida desde Armenia - 7:00 a.m.</li>
-            <li>Ingreso a reserva natural y senderismo</li>
-            <li>Almuerzo típico campesino</li>
-            <li>Avistamiento de aves y flora</li>
-            <li>Regreso al punto de partida - 5:00 p.m.</li>
+            <li>Salida desde Armenia – 8:00 a.m.</li>
+            <li>Primer pueblo mágico – Recorrido por calles coloridas y artesanías</li>
+            <li>Mirador natural – Vistas panorámicas del paisaje cafetero</li>
+            <li>Degustación de café – Experiencia en finca tradicional</li>
+            <li>Almuerzo típico – Sabores locales en restaurante campestre</li>
         </ol>
 
         <h4 class="section-title">Mapa del recorrido</h4>

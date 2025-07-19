@@ -1,3 +1,5 @@
+{% load static %}
+{% load widget_tweaks %}
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -6,18 +8,17 @@
     <title>Paquete Esmeralda - BioRutas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/navbar.css">
-    <link rel="stylesheet" href="/footer.css">
-    <link rel="stylesheet" href="/packs/styles.css">
+    <link rel="stylesheet" href="{% static 'usuarios/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'usuarios/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'usuarios/packs.css' %}">
     </head>
     <body>
-        <!-- Menú principal -->
-                <header class="sticky-top bg-white main-header">
+    <header class="sticky-top bg-white main-header">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Logo a la izquierda -->
                 <a class="navbar-brand" href="/home/index.html">
-                    <img src="/home/img/logo.png" alt="Travel Logo" height="40">
+                    <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
                 </a>
                 
                 <!-- Botón móvil -->
@@ -47,7 +48,7 @@
                     <!-- Elementos derecha -->
                     <ul class="navbar-nav right-elements">
                         <li class="nav-item">
-                            <a class="login-btn" href="login.html">
+                            <a class="login-btn" href="/home/inicio sesion/login.html">
                                 <i class="bi bi-person-fill"></i> Iniciar sesión
                             </a>
                         </li>
@@ -69,50 +70,50 @@
 
     <div class="container my-5">
     <!-- Título -->
-    <h2 class="text-center section-title">Paquete Esmeralda - Eje Cafetero</h2>
+    <h2 class="text-center section-title">Paquete zafiro - Eje Cafetero</h2>
 
     <!-- Imagen principal -->
-    <img id="mainImage" src="img/casas.jpg" class="main-image" alt="Imagen principal" />
+    <img id="mainImage" src="{% static 'usuarios/imgpacks/san-vicente-01-870x555.jpg' %}" class="main-image" alt="Imagen principal" />
 
     <!-- Miniaturas -->
     <div class="thumbnail-container">
-        <img src="img/Cafetales,_en_Colombia.jpg" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
-        <img src="img/rio.png" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
-        <img src="img/san-vicente-01-870x555.jpg" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/terma-en-la-roca-san-vicente.jpeg' %}" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/Portada-El-Cairo.jpg' %}" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
+        <img src="{% static 'usuarios/imgpacks/parque-los-nevados-eje-cafetero.jpg' %}" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
     </div>
 
     <div class="row mt-5">
         <!-- Sección izquierda -->
         <div class="col-lg-8 pe-lg-5">
         <h4 class="section-title">Descripción</h4>
-        <p>Vive una experiencia exclusiva en el corazón del Eje Cafetero con nuestro Tour VIP por Salento, termales, finca cafetera y más. Disfruta de paisajes espectaculares, aguas termales relajantes, una auténtica finca cafetera y la magia de Salento, todo en un solo paquete con hospedaje incluido.</p>
+        <p>Vive una experiencia única cabalgando por los paisajes espectaculares de Santa Rosa de Cabal. Descubre cascadas ocultas, fincas cafeteras tradicionales y disfruta de la auténtica cultura rural de Risaralda, todo acompañado por guías expertos y caballos bien entrenados.</p>
 
         <h4 class="section-title">¿Qué incluye?</h4>
         <div class="row">
             <div class="col-sm-6">
             <ul class="list-unstyled">
-                <li><span class="icon-check">✔</span>  Transporte ida y regreso en vehículo privado</li>
-                <li><span class="icon-check">✔</span> Guía turístico especializado</li>
-                <li><span class="icon-check">✔</span> Desayuno, almuerzo típico y cena gourmet</li>
-                <li><span class="icon-check">✔</span>  Entrada a termales naturales</li>
-                <li><span class="icon-check">✔</span> Visita a finca cafetera con degustación</li>
+                <li><span class="icon-check">✔</span> Cabalgata guiada (2.5 horas) por senderos naturales</li>
+                <li><span class="icon-check">✔</span> Visita a cascada escondida (oportunidad para refrescarse)</li>
+                <li><span class="icon-check">✔</span> Degustación de café de la región en finca tradicional</li>
+                <li><span class="icon-check">✔</span> Almuerzo campesino (sancocho o bandeja paisa)</li>
+                <li><span class="icon-check">✔</span> Guía local conocedor de la zona</li>
             </ul>
             </div>
             <div class="col-sm-6">
             <ul class="list-unstyled">
                 <li><span class="icon-check">✔</span> Entrada a reserva natural</li>
-                <li><span class="icon-close">✘</span> Hospedaje</li>
+                <li><span class="icon-close">✘</span> Transporte hasta el punto de encuentro</li>
             </ul>
             </div>
         </div>
 
         <h4 class="section-title">Itinerario</h4>
         <ol>
-            <li>Salida desde Armenia – 7:00 a.m.</li>
-            <li>Recorrido por Salento – Visita al mirador del Valle de Cocora y tiempo libre en el pueblo.</li>
-            <li>Almuerzo típico – Degustación de platos tradicionales.</li>
-            <li>ermales naturales – Relajación en aguas termales rodeadas de naturaleza.</li>
-            <li>Check-in en hotel boutique – Tarde libre para disfrutar de las instalaciones.</li>
+            <li>Punto de encuentro: Finca en Santa Rosa de Cabal - 8:30 a.m.</li>
+            <li>Cabalgata por montañas y cafetales – Vistas panorámicas</li>
+            <li>Parada en cascada natural – Tiempo para fotos y descanso</li>
+            <li>Degustación de café artesanal – Explicación del proceso</li>
+            <li>Almuerzo típico en finca con productos locales</li>
         </ol>
 
         <h4 class="section-title">Mapa del recorrido</h4>
@@ -170,7 +171,7 @@
             <div class="footer-top">
             <!-- Logo e Info -->
             <div class="footer-brand">
-                <img src="img/logo.png" alt="Biorutas Logo" width="70" height="60">
+                <img src="{% static 'usuarios/img/logo.png' %}" alt="Biorutas Logo" width="70" height="60">
                 <h2 class="footer-logo-text">Biorutas</h2>
             </div>
 

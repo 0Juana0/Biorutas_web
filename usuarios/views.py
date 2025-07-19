@@ -68,3 +68,23 @@ def paquetes(request):
     #Obtener las reservas del cliente 
     paquetes = Paquete.objects.filter(usuario_id=cliente_id)
     return render(request,'usuarios/paquetes.html', {'paquetes':paquetes})
+
+from django.shortcuts import render
+
+def paquete_diamante(request):
+    return render(request, 'usuarios/paquete_diamante.html')
+
+def paquete_oro(request):
+    return render(request, 'usuarios/paquete_oro.html')
+
+def paquete_platino(request):
+    return render(request, 'usuarios/paquete_platino.html')
+
+def paquete_esmeralda(request):
+    return render(request, 'usuarios/paquete_esmeralda.html')
+
+def paquete_zafiro(request):
+    return render(request, 'usuarios/paquete_zafiro.html')
+
+def paquete_aventura(request):
+    return render(request, 'usuarios/paquete_aventura.html')
