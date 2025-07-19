@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioRutas - Paquetes Turísticos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="/navbar.css">
+
+</head>
+<body>
+    
+    <!-- Menú principal -->
+            <header class="sticky-top bg-white main-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <!-- Logo a la izquierda -->
+            <a class="navbar-brand" href="/home/index.html">
+                <img src="/home/img/logo.png" alt="Travel Logo" height="40">
+            </a>
+            
+            <!-- Botón móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú principal -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Menú central -->
+                <ul class="navbar-nav center-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Reservas/reservas.html">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hotels.html">Hotels</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flights.html">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookings.html">Bookings</a>
+                    </li>
+                </ul>
+                
+                <!-- Elementos derecha -->
+                <ul class="navbar-nav right-elements">
+                    <li class="nav-item">
+                        <a class="login-btn" href="login.html">
+                            <i class="bi bi-person-fill"></i> Iniciar sesión
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown language-selector">
+                        <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-globe me-1"></i> ES
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" href="#" data-lang="es">Español</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <div class="container my-5">
+        
+        <h2 class="mb-4">Explora todos los paquetes de BioRutas</h2>
+        <div class="row">
+          
+          
+          <!-- Panel lateral de filtros -->
+          <aside class="col-lg-3 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">¿Cuándo viajas?</h5>
+                <input type="date" class="form-control mb-3" />
+
+                <h6>Tipo de tour</h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="aventura">
+                  <label class="form-check-label" for="aventura">Aventura</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="relajacion">
+                  <label class="form-check-label" for="relajacion">Relajación</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="cultural">
+                  <label class="form-check-label" for="cultural">Cultural</label>
+                </div>
+
+                <hr>
+                <h6>Duración</h6>
+                <select class="form-select mb-3">
+                  <option value="">Todas</option>
+                  <option>1 día</option>
+                  <option>2 días / 1 noche</option>
+                  <option>3 días</option>
+                </select>
+
+                <h6>Idioma</h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="español">
+                  <label class="form-check-label" for="español">Español</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="ingles">
+                  <label class="form-check-label" for="ingles">Inglés</label>
+                </div>
+
+                <hr>
+                <h6>Especiales</h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="descuento">
+                  <label class="form-check-label" for="descuento">Con descuento</label>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Tarjetas -->
+          <section class="col-lg-9">
+            <div class="d-flex flex-column gap-4">
+              
+              <!-- Tarjeta -->
+              <div class="card card-horizontal">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/diamante.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Diamante" />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Paquete Diamante</h5>
+                      <p class="card-text mb-2">Eje Cafetero, Colombia</p>
+                      <p class="card-text">Tour VIP por Salento, termales, finca cafetera y hospedaje todo incluido.</p>
+                      <p class="card-text"><strong>Duración:</strong> 2 días / 1 noche</p>
+                      <p class="card-text"><strong>Desde:</strong> $250.000 COP</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-warning">★ ★ ★ ★ ☆</span>
+                        <a href="/packs/paquete-diamante.html" class="btn btn-outline-primary">Ver detalles</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+    <!-- PAQUETE 2: Platino -->
+    <div class="card card-horizontal">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/platino.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Platino" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Paquete Platino</h5>
+            <p class="card-text mb-2">Eje Cafetero, Colombia</p>
+            <p class="card-text">Cabalgata por Filandia, café artesanal y experiencia rural inolvidable.</p>
+            <p class="card-text"><strong>Duración:</strong> 2 días / 1 noche</p>
+            <p class="card-text"><strong>Desde:</strong> $200.000 COP</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-warning">★ ★ ★ ★ ☆</span>
+              <a href="/packs/paquete-platino.html" class="btn btn-outline-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE 3: Oro -->
+    <div class="card card-horizontal">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/oro.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Oro" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Paquete Oro</h5>
+            <p class="card-text mb-2">Eje Cafetero, Colombia</p>
+            <p class="card-text">Tour en Jeep Willy's por pueblos típicos y miradores naturales.</p>
+            <p class="card-text"><strong>Duración:</strong> 2 días / 1 noche</p>
+            <p class="card-text"><strong>Desde:</strong> $180.000 COP</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-warning">★ ★ ★ ★ ☆</span>
+              <a href="/packs/paquete-oro.html" class="btn btn-outline-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE 4: Esmeralda -->
+    <div class="card card-horizontal">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/esmeralda.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Esmeralda" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Paquete Esmeralda</h5>
+            <p class="card-text mb-2">Eje Cafetero, Colombia</p>
+            <p class="card-text">Caminata ecológica con guía, visita a cascadas y avistamiento de aves.</p>
+            <p class="card-text"><strong>Duración:</strong> 2 días / 1 noche</p>
+            <p class="card-text"><strong>Desde:</strong> $160.000 COP</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-warning">★ ★ ★ ★ ☆</span>
+              <a href="/packs/detalle-paquete.html" class="btn btn-outline-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE 5: Zafiro -->
+    <div class="card card-horizontal">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/zafiro.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Zafiro" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Paquete Zafiro</h5>
+            <p class="card-text mb-2">Eje Cafetero, Colombia</p>
+            <p class="card-text">Termales naturales, spa, masaje relajante y gastronomía típica.</p>
+            <p class="card-text"><strong>Duración:</strong> 2 días / 1 noche</p>
+            <p class="card-text"><strong>Desde:</strong> $220.000 COP</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-warning">★ ★ ★ ★ ☆</span>
+              <a href="/packs/paquete-zafiro.html" class="btn btn-outline-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAQUETE 6: Aventura -->
+    <div class="card card-horizontal">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/aventura.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Paquete Aventura" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Paquete Aventura</h5>
+            <p class="card-text mb-2">Eje Cafetero, Colombia</p>
+            <p class="card-text">Rafting en río, canopy extremo, senderismo y fogata nocturna.</p>
+            <p class="card-text"><strong>Duración:</strong> 2 días / 1 noche</p>
+            <p class="card-text"><strong>Desde:</strong> $210.000 COP</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-warning">★ ★ ★ ★ ☆</span>
+              <a href="/packs/paquete-aventura.html" class="btn btn-outline-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+            </div>
+
+            <!-- Paginación -->
+            <nav class="mt-5">
+              <ul class="pagination justify-content-center">
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">20</a></li>
+              </ul>
+            </nav>
+
+          </section>
+        </div>
+      </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

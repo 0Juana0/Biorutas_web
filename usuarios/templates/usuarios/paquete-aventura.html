@@ -1,0 +1,230 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paquete Esmeralda - BioRutas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/packs/styles.css">
+    </head>
+    <body>
+    <header class="sticky-top bg-white main-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Logo a la izquierda -->
+                <a class="navbar-brand" href="/home/index.html">
+                    <img src="img/logo.png" alt="Travel Logo" height="40">
+                </a>
+                
+                <!-- Botón móvil -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Menú principal -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Menú central -->
+                    <ul class="navbar-nav center-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Reservas/reservas.html">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hotels.html">Hotels</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="flights.html">Flights</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bookings.html">Bookings</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Elementos derecha -->
+                    <ul class="navbar-nav right-elements">
+                        <li class="nav-item">
+                            <a class="login-btn" href="/home/inicio sesion/login.html">
+                                <i class="bi bi-person-fill"></i> Iniciar sesión
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown language-selector">
+                            <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-globe me-1"></i> ES
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item active" href="#" data-lang="es">Español</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-5">
+    <!-- Título -->
+    <h2 class="text-center section-title">Paquete Aventura - Eje Cafetero</h2>
+
+    <!-- Imagen principal -->
+    <img id="mainImage" src="img/destacado-canopy-torrentismo.jpg" class="main-image" alt="Imagen principal" />
+
+    <!-- Miniaturas -->
+    <div class="thumbnail-container">
+        <img src="img/senderismo.jpg" class="thumb-image" alt="Miniatura 1" onclick="changeImage(this)" />
+        <img src="img/pisos.jpg" class="thumb-image" alt="Miniatura 2" onclick="changeImage(this)" />
+        <img src="img/destacado-rafting.jpg" class="thumb-image" alt="Miniatura 3" onclick="changeImage(this)" />
+    </div>
+
+    <div class="row mt-5">
+        <!-- Sección izquierda -->
+        <div class="col-lg-8 pe-lg-5">
+        <h4 class="section-title">Descripción</h4>
+        <p>Vive un día lleno de adrenalina y conexión con la naturaleza en una experiencia multiaventura diseñada para los amantes de lo extremo. Navega por rápidos emocionantes, vuela entre los árboles en canopy, explora senderos ocultos y termina el día con una fogata bajo las estrellas.</p>
+
+        <h4 class="section-title">¿Qué incluye?</h4>
+        <div class="row">
+            <div class="col-sm-6">
+            <ul class="list-unstyled">
+                <li><span class="icon-check">✔</span> Rafting en río clase III-IV (equipo completo incluido)</li>
+                <li><span class="icon-check">✔</span> Canopy extremo (5 líneas, hasta 200m de longitud)</li>
+                <li><span class="icon-check">✔</span> Senderismo ecológico (cascada escondida o mirador natural)</li>
+                <li><span class="icon-check">✔</span> Fogata nocturna con snacks y bebidas tradicionales</li>
+                <li><span class="icon-check">✔</span> Almuerzo energizante (comida típica campesina)</li>
+                <li><span class="icon-check">✔</span> Guías especializados en deportes extremos</li>
+            </ul>
+            </div>
+            <div class="col-sm-6">
+            <ul class="list-unstyled">
+                <li><span class="icon-check">✔</span> Transporte (disponible con costo adicional)</li>
+                <li><span class="icon-close">✘</span> Hospedaje</li>
+            </ul>
+            </div>
+        </div>
+
+        <h4 class="section-title">Itinerario</h4>
+        <ol>
+            <li>8:00 AM – Llegada al campamento base (briefing de seguridad)</li>
+            <li>9:00 AM – Rafting extremo (1.5 horas de emoción en el río)</li>
+            <li>6:00 PM – Fogata + relatos locales (ambiente mágico)</li>
+            <li>1:30 PM – Almuerzo campestre (recarga energías)</li>
+            <li>3:00 PM – Canopy extremo (vuelos entre montañas)</li>
+        </ol>
+
+        <h4 class="section-title">Mapa del recorrido</h4>
+        <iframe src="https://maps.google.com/maps?q=quindio&t=&z=10&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+
+        <h4 class="section-title mt-4">Calendario de disponibilidad</h4>
+        <input type="date" class="form-control mb-4" />
+
+        <h4 class="section-title">Comentarios</h4>
+        <div class="border rounded p-3 mb-3 bg-white">
+            <strong>Laura R.</strong><br>
+            <div class="star-rating" data-rating="5"></div>
+            ¡Hermosa experiencia! Lo recomiendo totalmente.
+        </div>
+        <div class="border rounded p-3 mb-3 bg-white">
+            <strong>Carlos M.</strong><br>
+            <div class="star-rating" data-rating="4"></div>
+            Todo excelente, aunque llovió un poco.
+        </div>
+        </div>
+
+        <!-- Formulario reserva tipo panel -->
+        <div class="col-lg-4">
+        <div class="card p-4 shadow sticky-box" id="reservaBox">
+            <h5 class="fw-bold mb-3">Desde $250.000</h5>
+            <hr>
+            <label class="form-label">Fecha del tour</label>
+            <input type="date" class="form-control mb-3">
+
+            <label class="form-label">Cantidad de personas</label>
+            <input type="number" class="form-control mb-3">
+
+            <label class="form-label">Extras:</label><br>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="extra1">
+            <label class="form-check-label" for="extra1">Guía bilingüe (+$20.000)</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="extra2">
+            <label class="form-check-label" for="extra2">Souvenir local (+$10.000)</label>
+            </div>
+            <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="extra3">
+            <label class="form-check-label" for="extra3">Seguro de viaje (+$15.000)</label>
+            </div>
+
+            <p><strong>Total estimado: $295.000</strong></p>
+            <button class="btn btn-primary w-100">Reservar ahora</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <footer class="bio-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+            <!-- Logo e Info -->
+            <div class="footer-brand">
+                <img src="img/logo.png" alt="Biorutas Logo" width="70" height="60">
+                <h2 class="footer-logo-text">Biorutas</h2>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="footer-socials">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Menú inferior -->
+            <div class="footer-links">
+            <div class="footer-col">
+                <h3 class="col-title">Company</h3>
+                <ul class="col-list">
+                <li><a href="/about" class="footer-link">About</a></li>
+                <li><a href="/careers" class="footer-link">Careers</a></li>
+                <li><a href="/mobile-app" class="footer-link">Mobile</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="col-title">Contact</h3>
+                <ul class="col-list">
+                <li><a href="/help" class="footer-link">Help/FAQ</a></li>
+                <li><a href="/press" class="footer-link">Press</a></li>
+                <li><a href="/affiliates" class="footer-link">Affiliates</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="col-title">More</h3>
+                <ul class="col-list">
+                <li><a href="/airline-fees" class="footer-link">Airline Fees</a></li>
+                <li><a href="/airlines" class="footer-link">Airlines</a></li>
+                <li><a href="/travel-tips" class="footer-link">Low Fare Tips</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        </footer>
+
+    <script>
+    function changeImage(element) {
+        document.getElementById('mainImage').src = element.src;
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="/home/animaciones.js"></script>
+    </body>
+    </html>
