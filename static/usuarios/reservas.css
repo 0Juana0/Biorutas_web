@@ -1,0 +1,52 @@
+:root {
+    --primary: #009fe3;
+    --secondary: #5eb6f9;
+    --dark: #2d3a4a;
+    --light: #f8f9fa;
+    --green: #90BA26;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+@font-face {
+    font-family: 'Volkhov';
+    src: url('../fonts/Volkhov-Bold.woff2') format('woff2'),
+            url('../fonts/Volkhov-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Volkhov', serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+
+.card-horizontal {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #106042;
+}
+
+.pagination .page-link {
+  color: #106042;
+}
+
+.pagination .active .page-link {
+  background-color: #106042;
+  border-color: #106042;
+  color: white;
+}
+
+img.object-fit-cover {
+  object-fit: cover;
+}
