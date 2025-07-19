@@ -8,6 +8,7 @@ db.sqlite3
 # Entorno virtual
 env/
 venv/
+.venv/
 *.egg-info/
 
 # Variables de entorno
