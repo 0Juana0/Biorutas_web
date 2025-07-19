@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Logo a la izquierda -->
-                <a class="navbar-brand" href="/home/index.html">
+                <a class="navbar-brand" href="{% url 'usuarios:gracias' %}">
                     <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
                 </a>
                 
@@ -33,23 +33,23 @@
                     <!-- Menú central -->
                     <ul class="navbar-nav center-menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Reservas/reservas.html">Reservas</a>
+                            <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Reservas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="hotels.html">Hotels</a>
+                            <a class="nav-link" href="#">Hotels</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="flights.html">Flights</a>
+                            <a class="nav-link" href="#">Flights</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="bookings.html">Bookings</a>
+                            <a class="nav-link" href="#">Bookings</a>
                         </li>
                     </ul>
                     
                     <!-- Elementos derecha -->
                     <ul class="navbar-nav right-elements">
                         <li class="nav-item">
-                            <a class="login-btn" href="login.html">
+                            <a class="login-btn" href="{% url 'usuarios:login' %}">
                                 <i class="bi bi-person-fill"></i> Iniciar sesión
                             </a>
                         </li>
@@ -193,27 +193,27 @@
             <div class="footer-col">
                 <h3 class="col-title">Company</h3>
                 <ul class="col-list">
-                <li><a href="/about" class="footer-link">About</a></li>
-                <li><a href="/careers" class="footer-link">Careers</a></li>
-                <li><a href="/mobile-app" class="footer-link">Mobile</a></li>
+                <li><a href="#" class="footer-link">About</a></li>
+                <li><a href="#" class="footer-link">Careers</a></li>
+                <li><a href="#" class="footer-link">Mobile</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3 class="col-title">Contact</h3>
                 <ul class="col-list">
-                <li><a href="/help" class="footer-link">Help/FAQ</a></li>
-                <li><a href="/press" class="footer-link">Press</a></li>
-                <li><a href="/affiliates" class="footer-link">Affiliates</a></li>
+                <li><a href="#" class="footer-link">Help/FAQ</a></li>
+                <li><a href="#" class="footer-link">Press</a></li>
+                <li><a href="#" class="footer-link">Affiliates</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h3 class="col-title">More</h3>
                 <ul class="col-list">
-                <li><a href="/airline-fees" class="footer-link">Airline Fees</a></li>
-                <li><a href="/airlines" class="footer-link">Airlines</a></li>
-                <li><a href="/travel-tips" class="footer-link">Low Fare Tips</a></li>
+                <li><a href="#" class="footer-link">Airline Fees</a></li>
+                <li><a href="#" class="footer-link">Airlines</a></li>
+                <li><a href="#" class="footer-link">Low Fare Tips</a></li>
                 </ul>
             </div>
             </div>
