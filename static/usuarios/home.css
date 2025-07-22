@@ -441,7 +441,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    gap: 10rem;
+    gap: 8rem;
     padding: 1rem 0.5rem;
     overflow-x: auto;
     scroll-snap-type: x proximity;
