@@ -16,11 +16,11 @@
 <body>
     
     <!-- Menú principal -->
-            <header class="sticky-top bg-white main-header">
+           <header class="sticky-top bg-white main-header">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="{% url 'usuarios:gracias' %}">
+            <a class="navbar-brand" href="{% url 'usuarios:gracias' %}" >
                 <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
             </a>
             
@@ -35,16 +35,13 @@
                 <!-- Menú central -->
                 <ul class="navbar-nav center-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Reservas</a>
+                        <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hotels</a>
+                        <a class="nav-link" href="#">Hoteles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Flights</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bookings</a>
+                        <a class="nav-link" href="#">Vuelos</a>
                     </li>
                 </ul>
                 
@@ -133,7 +130,7 @@
             <div class="d-flex flex-column gap-4">
               
               <!-- Tarjeta -->
-               <!-- PAQUETE 1: Diamante -->
+              <!-- PAQUETE 1: Diamante -->
               <div class="card card-horizontal">
                 <div class="row g-0">
                   <div class="col-md-4">

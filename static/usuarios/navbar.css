@@ -42,7 +42,7 @@
 
 /* LOGO (IZQUIERDA) */
 .navbar-brand {
-    z-index: 1001;
+    z-index: 1000;
 }
 
 /* COLLAPSE: CONTIENE MENÚ Y ELEMENTOS DERECHA */
@@ -61,7 +61,7 @@
     flex-grow: 1;
     margin: 0;
     gap: 30px;
-    transform: translateX(40px);
+    transform: translateX(90px);
 }
 
 /* ELEMENTOS DERECHA */

@@ -40,13 +40,10 @@
                         <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hotels</a>
+                        <a class="nav-link" href="#">Hoteles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Flights</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bookings</a>
+                        <a class="nav-link" href="#">Vuelos</a>
                     </li>
                 </ul>
                 
@@ -85,7 +82,7 @@
                 <p class="mb-4 text-secondary" style="max-width: 400px">
                     Viajar es descubrir que el mundo es mucho más grande que tus sueños y más generoso que tus miedos.
                 </p>
-                <a href="#" class="btn btn-primary btn-lg px-4">DESCUBRE MAS</a>
+                <a href="{% url 'usuarios:paquetes' %}" class="btn btn-primary btn-lg px-4">DESCUBRE MAS</a>
             </div>
             <div class="col-lg-6 d-flex justify-content-center align-items-center position-relative">
                 <img src="{% static 'usuarios/img/viajera.png' %}" alt="Mujer viajera" class="img-fluid hero-img animate-viajera" loading="lazy">
@@ -134,7 +131,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-5">
                 <h2 class="video-title">Vive la aventura</h2>
-                <p class="video-subtitle">Descubre destinos increíbles en nuestro video destacado</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -152,42 +148,54 @@
 </section>
 
     <!-- Sección de sitios populares -->
-    <section class="popular-section py-5">
+    <section class="popular-section py-5 text-center">
         <div class="container">
-            <h2 class="mb-4 fw-bold text-dark">Sitios populares</h2>
+            <h2 class="section-title">Sitios populares</h2>
             <div class="row g-3">
                 <div class="col-12 col-md-4">
                     <div class="popular-card">
-                        <img src="{% static 'usuarios/img/montaña.jpeg' %}" alt="Cruceros" class="popular-img" loading="lazy">
-                        <span class="popular-title">Paquete Platino</span>
+                        <a href="{% url 'usuarios:paquete_platino' %}" class="popular-link">
+                            <img src="{% static 'usuarios/img/montaña.jpeg' %}" alt="Cruceros" class="popular-img" loading="lazy">
+                            <span class="popular-title">Paquete Platino</span>
+                        </a>
                     </div>
                     <div class="popular-card mt-3">
-                        <img src="{% static 'usuarios/img/pueblo.jpeg' %}" alt="Tour de museos" class="popular-img" loading="lazy">
-                        <span class="popular-title">Paquete Aventura</span>
+                        <a href="{% url 'usuarios:paquete_aventura' %}" class="popular-link">
+                            <img src="{% static 'usuarios/img/pueblo.jpeg' %}" alt="Tour de museos" class="popular-img" loading="lazy">
+                            <span class="popular-title">Paquete Aventura</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="popular-card popular-card-lg">
-                        <img src="{% static 'usuarios/img/palmeras.jpeg' %}" alt="Playas" class="popular-img" loading="lazy">
-                        <span class="popular-title">Paquete Diamante</span>
+                        <a href="{% url 'usuarios:paquete_diamante' %}" class="popular-link">
+                            <img src="{% static 'usuarios/img/palmeras.jpeg' %}" alt="Playas" class="popular-img" loading="lazy">
+                            <span class="popular-title">Paquete Diamante</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="popular-card">
-                        <img src="{% static 'usuarios/img/montañas2.jpeg' %}" alt="Ciudades" class="popular-img" loading="lazy">
-                        <span class="popular-title">Paquete Oro</span>
+                        <a href="{% url 'usuarios:paquete_oro' %}" class="popular-link">
+                            <img src="{% static 'usuarios/img/montañas2.jpeg' %}" alt="Ciudades" class="popular-img" loading="lazy">
+                            <span class="popular-title">Paquete Oro</span>
+                        </a>
                     </div>
                     <div class="row g-3 mt-1">
                         <div class="col-6">
                             <div class="popular-card">
-                                <img src="{% static 'usuarios/img/torrentismo.jpeg' %}" alt="Comida local" class="popular-img" loading="lazy">
-                                <span class="popular-title">Paquete Zafiro</span>
+                                <a href="{% url 'usuarios:paquete_zafiro' %}" class="popular-link">
+                                    <img src="{% static 'usuarios/img/torrentismo.jpeg' %}" alt="Comida local" class="popular-img" loading="lazy">
+                                    <span class="popular-title">Paquete Zafiro</span>
+                                </a>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="popular-card">
-                                <img src="{% static 'usuarios/img/termales.jpeg' %}" alt="Senderismo" class="popular-img" loading="lazy">
-                                <span class="popular-title">Paquete Esmeralda</span>
+                                <a href="{% url 'usuarios:paquete_esmeralda' %}" class="popular-link">
+                                    <img src="{% static 'usuarios/img/termales.jpeg' %}" alt="Senderismo" class="popular-img" loading="lazy">
+                                    <span class="popular-title">Paquete Esmeralda</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -199,30 +207,40 @@
     <!-- Sección de ofertas especiales -->
     <section class="special-offers-section py-4">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h3 class="fw-bold text-dark mb-0">Ofertas especiales</h3>
-                <!--<a href="#" class="see-all-link">Ver todas</a>-->
+            <div class="d-flex justify-content-center mb-3">
+                <h2 class="section-title text-center">Sitios populares</h2>
+                
             </div>
             <div class="special-offers-row">
                 <div class="offer-card">
+                    <a href="{% url 'usuarios:paquete_esmeralda' %}" class="popular-link">
                     <img src="{% static 'usuarios/img/pueblo.jpeg' %}" alt="Oferta 1" class="offer-img mb-2" loading="lazy">
                     <div class="offer-date">Último día: 13 Marzo</div>
                     <div class="offer-desc">Hasta 50% de descuento</div>
+                    </a>
+
+                    
                 </div>
                 <div class="offer-card">
-                    <img src="{% static 'usuarios/img/termales.jpeg' %}" alt="Oferta 2" class="offer-img mb-2" loading="lazy">
-                    <div class="offer-date">Último día: 13 Marzo</div>
-                    <div class="offer-desc">Cupón de $200 para tours</div>
+                    <a href="{% url 'usuarios:paquete_aventura' %}" class="popular-link">
+                        <img src="{% static 'usuarios/img/termales.jpeg' %}" alt="Oferta 2" class="offer-img mb-2" loading="lazy">
+                        <div class="offer-date">Último día: 13 Marzo</div>
+                        <div class="offer-desc">Cupón de $200 para tours</div>
+                    </a>
                 </div>
                 <div class="offer-card">
-                    <img src="{% static 'usuarios/img/palmeras.jpeg' %}" alt="Oferta 3" class="offer-img mb-2" loading="lazy">
-                    <div class="offer-date">Último día: 13 Marzo</div>
-                    <div class="offer-desc">Hoteles en ciudades</div>
+                    <a href="{% url 'usuarios:paquete_platino' %}" class="popular-link">
+                        <img src="{% static 'usuarios/img/palmeras.jpeg' %}" alt="Oferta 3" class="offer-img mb-2" loading="lazy">
+                        <div class="offer-date">Último día: 13 Marzo</div>
+                        <div class="offer-desc">Hoteles en ciudades</div>
+                    </a>
                 </div>
                 <div class="offer-card">
-                    <img src="{% static 'usuarios/img/torrentismo.jpeg' %}" alt="Oferta 4" class="offer-img mb-2" loading="lazy">
-                    <div class="offer-date">Último día: 13 Marzo</div>
-                    <div class="offer-desc">Tours en kayak</div>
+                    <a href="{% url 'usuarios:paquete_diamante' %}" class="popular-link">
+                        <img src="{% static 'usuarios/img/torrentismo.jpeg' %}" alt="Oferta 4" class="offer-img mb-2" loading="lazy">
+                        <div class="offer-date">Último día: 13 Marzo</div>
+                        <div class="offer-desc">Tours en kayak</div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -234,7 +252,7 @@
             <div class="promo-card">
                 <div class="col-md-6 p-4">
                     <h3 class="fw-bold text-dark mb-3">Consigue hasta un<br>35% de descuento<br>en tu destino favorito</h3>
-                    <a href="#" class="btn btn-primary">Reservar ahora</a>
+                    <a href="{% url 'usuarios:paquetes' %}" class="btn btn-primary">Reservar ahora</a>
                 </div>
                 <div class="col-md-6 promo-img-col">
                     <img src="{% static 'usuarios/img/fuego.jpg' %}" alt="Promoción especial" class="promo-img" loading="lazy">
@@ -246,7 +264,7 @@
     <!-- Reseñas -->
     <section class="reviews-section py-5">
         <div class="container text-center">
-            <h3 class="fw-bold mb-3">Reseñas de clientes</h3>
+            <h2 class="section-title text-center">Reseñas de clientes</h2>
             <div class="reviews-quote mb-3">
                 <span class="reviews-quote-icon">❝</span>
             </div>
@@ -300,10 +318,10 @@
         <div class="footer-socials">
             <h4>Síguenos</h4>
             <div class="social-icons">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
         </div>
@@ -311,29 +329,29 @@
         <!-- Menú inferior -->
         <div class="footer-links">
         <div class="footer-col">
-            <h3 class="col-title">Company</h3>
+            <h3 class="col-title">Menu</h3>
             <ul class="col-list">
-            <li><a href="/about" class="footer-link">About</a></li>
-            <li><a href="/careers" class="footer-link">Careers</a></li>
-            <li><a href="/mobile-app" class="footer-link">Mobile</a></li>
+            <li><a href="{% url 'usuarios:gracias' %}" class="footer-link">Inicio</a></li>
+            <li><a href="{% url 'usuarios:paquetes' %}" class="footer-link">Paquetes</a></li>
+            <li><a href="{#" class="footer-link">Hoteles</a></li>
             </ul>
         </div>
 
         <div class="footer-col">
-            <h3 class="col-title">Contact</h3>
+            <h3 class="col-title">Contactanos</h3>
             <ul class="col-list">
-            <li><a href="#" class="footer-link">Help/FAQ</a></li>
-            <li><a href="#" class="footer-link">Press</a></li>
-            <li><a href="#" class="footer-link">Affiliates</a></li>
+            <li><a href="https://wa.me/" class="footer-link">whatsapp</a></li>
+            <li><a href="https://www.facebook.com/" class="footer-link">correo</a></li>
+            <li><a href="https://www.instagram.com/" class="footer-link">facebook</a></li>
             </ul>
         </div>
 
         <div class="footer-col">
-            <h3 class="col-title">More</h3>
+            <h3 class="col-title">Destacados</h3>
             <ul class="col-list">
-            <li><a href="#" class="footer-link">Airline Fees</a></li>
-            <li><a href="#" class="footer-link">Airlines</a></li>
-            <li><a href="#" class="footer-link">Low Fare Tips</a></li>
+            <li><a href="{% url 'usuarios:paquete_aventura' %}" class="footer-link">paquete aventura</a></li>
+            <li><a href="{% url 'usuarios:paquete_platino' %}" class="footer-link">paquete platino</a></li>
+            <li><a href="{% url 'usuarios:paquete_diamante' %}" class="footer-link">paquete diamante</a></li>
             </ul>
         </div>
         </div>

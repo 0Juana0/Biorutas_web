@@ -8,49 +8,45 @@
   <title>Paquete Esmeralda - BioRutas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{% static 'usuarios/paquete_esmeralda.css' %}">
+  <link rel="stylesheet" href="{% static 'usuarios/navbar.css' %}">
   <link rel="stylesheet" href="{% static 'usuarios/footer.css' %}">
   <link rel="stylesheet" href="{% static 'usuarios/packs.css' %}">
 </head>
 <body>
     <!-- Menú principal -->
-            <header class="sticky-top bg-white main-header">
+      <header class="sticky-top bg-white main-header">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="/home/index.html">
+            <a class="navbar-brand" href="{% url 'usuarios:gracias' %}" >
                 <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
             </a>
             
             <!-- Botón móvil -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
         aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-
+        <span class="navbar-toggler-icon"></span>
+            </button>
             
             <!-- Menú principal -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <!-- Menú central -->
                 <ul class="navbar-nav center-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Reservas/reservas.html">Reservas</a>
+                        <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="hotels.html">Hotels</a>
+                        <a class="nav-link" href="#">Hoteles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="flights.html">Flights</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="bookings.html">Bookings</a>
+                        <a class="nav-link" href="#">Vuelos</a>
                     </li>
                 </ul>
                 
                 <!-- Elementos derecha -->
                 <ul class="navbar-nav right-elements">
                     <li class="nav-item">
-                        <a class="login-btn" href="login.html">
+                        <a class="login-btn" href="{% url 'usuarios:login' %}">
                             <i class="bi bi-person-fill"></i> Iniciar sesión
                         </a>
                     </li>
@@ -179,10 +175,10 @@
         <div class="footer-socials">
             <h4>Síguenos</h4>
             <div class="social-icons">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
         </div>
@@ -190,35 +186,34 @@
         <!-- Menú inferior -->
         <div class="footer-links">
         <div class="footer-col">
-            <h3 class="col-title">Company</h3>
+            <h3 class="col-title">Menu</h3>
             <ul class="col-list">
-            <li><a href="/about" class="footer-link">About</a></li>
-            <li><a href="/careers" class="footer-link">Careers</a></li>
-            <li><a href="/mobile-app" class="footer-link">Mobile</a></li>
+            <li><a href="{% url 'usuarios:gracias' %}" class="footer-link">Inicio</a></li>
+            <li><a href="{% url 'usuarios:paquetes' %}" class="footer-link">Paquetes</a></li>
+            <li><a href="#" class="footer-link">Hoteles</a></li>
             </ul>
         </div>
 
         <div class="footer-col">
-            <h3 class="col-title">Contact</h3>
+            <h3 class="col-title">Contactanos</h3>
             <ul class="col-list">
-            <li><a href="/help" class="footer-link">Help/FAQ</a></li>
-            <li><a href="/press" class="footer-link">Press</a></li>
-            <li><a href="/affiliates" class="footer-link">Affiliates</a></li>
+            <li><a href="https://wa.me/" class="footer-link">whatsapp</a></li>
+            <li><a href="https://www.facebook.com/" class="footer-link">correo</a></li>
+            <li><a href="https://www.instagram.com/" class="footer-link">facebook</a></li>
             </ul>
         </div>
 
         <div class="footer-col">
-            <h3 class="col-title">More</h3>
+            <h3 class="col-title">Destacados</h3>
             <ul class="col-list">
-            <li><a href="/airline-fees" class="footer-link">Airline Fees</a></li>
-            <li><a href="/airlines" class="footer-link">Airlines</a></li>
-            <li><a href="/travel-tips" class="footer-link">Low Fare Tips</a></li>
+            <li><a href="{% url 'usuarios:paquete_aventura' %}" class="footer-link">paquete aventura</a></li>
+            <li><a href="{% url 'usuarios:paquete_platino' %}" class="footer-link">paquete platino</a></li>
+            <li><a href="{% url 'usuarios:paquete_diamante' %}" class="footer-link">paquete diamante</a></li>
             </ul>
         </div>
         </div>
     </div>
     </footer>
-
 <script>
   function changeImage(element) {
     document.getElementById('mainImage').src = element.src;

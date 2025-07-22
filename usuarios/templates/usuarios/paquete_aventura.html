@@ -14,59 +14,56 @@
     </head>
     <body>
     <header class="sticky-top bg-white main-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <!-- Logo a la izquierda -->
-                <a class="navbar-brand" href="/home/index.html">
-                    <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
-                </a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <!-- Logo a la izquierda -->
+            <a class="navbar-brand" href="{% url 'usuarios:gracias' %}" >
+                <img src="{% static 'usuarios/img/logo.png' %}" alt="Travel Logo" height="40">
+            </a>
+            
+            <!-- Botón móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú principal -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Menú central -->
+                <ul class="navbar-nav center-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Paquetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hoteles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vuelos</a>
+                    </li>
+                </ul>
                 
-                <!-- Botón móvil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <!-- Menú principal -->
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <!-- Menú central -->
-                    <ul class="navbar-nav center-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Reservas/reservas.html">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="hotels.html">Hotels</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="flights.html">Flights</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="bookings.html">Bookings</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Elementos derecha -->
-                    <ul class="navbar-nav right-elements">
-                        <li class="nav-item">
-                            <a class="login-btn" href="/home/inicio sesion/login.html">
-                                <i class="bi bi-person-fill"></i> Iniciar sesión
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown language-selector">
-                            <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="bi bi-globe me-1"></i> ES
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item active" href="#" data-lang="es">Español</a></li>
-                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                                <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <!-- Elementos derecha -->
+                <ul class="navbar-nav right-elements">
+                    <li class="nav-item">
+                        <a class="login-btn" href="{% url 'usuarios:login' %}">
+                            <i class="bi bi-person-fill"></i> Iniciar sesión
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown language-selector">
+                        <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-globe me-1"></i> ES
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" href="#" data-lang="es">Español</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <div class="container my-5">
     <!-- Título -->
@@ -168,57 +165,57 @@
     </div>
     </div>
     <footer class="bio-footer">
-        <div class="footer-container">
-            <div class="footer-top">
-            <!-- Logo e Info -->
-            <div class="footer-brand">
-                <img src="{% static 'usuarios/img/logo.png' %}" alt="Biorutas Logo" width="70" height="60">
-                <h2 class="footer-logo-text">Biorutas</h2>
-            </div>
+    <div class="footer-container">
+        <div class="footer-top">
+        <!-- Logo e Info -->
+        <div class="footer-brand">
+            <img src="{% static 'usuarios/img/logo.png' %}" alt="Biorutas Logo" width="70" height="60">
+            <h2 class="footer-logo-text">Biorutas</h2>
+        </div>
 
-            <!-- Redes Sociales -->
-            <div class="footer-socials">
-                <h4>Síguenos</h4>
-                <div class="social-icons">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-youtube"></i></a>
-                </div>
-            </div>
-            </div>
-
-            <!-- Menú inferior -->
-            <div class="footer-links">
-            <div class="footer-col">
-                <h3 class="col-title">Company</h3>
-                <ul class="col-list">
-                <li><a href="/about" class="footer-link">About</a></li>
-                <li><a href="/careers" class="footer-link">Careers</a></li>
-                <li><a href="/mobile-app" class="footer-link">Mobile</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3 class="col-title">Contact</h3>
-                <ul class="col-list">
-                <li><a href="/help" class="footer-link">Help/FAQ</a></li>
-                <li><a href="/press" class="footer-link">Press</a></li>
-                <li><a href="/affiliates" class="footer-link">Affiliates</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3 class="col-title">More</h3>
-                <ul class="col-list">
-                <li><a href="/airline-fees" class="footer-link">Airline Fees</a></li>
-                <li><a href="/airlines" class="footer-link">Airlines</a></li>
-                <li><a href="/travel-tips" class="footer-link">Low Fare Tips</a></li>
-                </ul>
-            </div>
+        <!-- Redes Sociales -->
+        <div class="footer-socials">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
-        </footer>
+        </div>
+
+        <!-- Menú inferior -->
+        <div class="footer-links">
+        <div class="footer-col">
+            <h3 class="col-title">Menu</h3>
+            <ul class="col-list">
+            <li><a href="{% url 'usuarios:gracias' %}" class="footer-link">Inicio</a></li>
+            <li><a href="{% url 'usuarios:paquetes' %}" class="footer-link">Paquetes</a></li>
+            <li><a href="#" class="footer-link">Hoteles</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3 class="col-title">Contactanos</h3>
+            <ul class="col-list">
+            <li><a href="https://wa.me/" class="footer-link">whatsapp</a></li>
+            <li><a href="https://www.facebook.com/" class="footer-link">correo</a></li>
+            <li><a href="https://www.instagram.com/" class="footer-link">facebook</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3 class="col-title">Destacados</h3>
+            <ul class="col-list">
+            <li><a href="{% url 'usuarios:paquete_aventura' %}" class="footer-link">paquete aventura</a></li>
+            <li><a href="{% url 'usuarios:paquete_platino' %}" class="footer-link">paquete platino</a></li>
+            <li><a href="{% url 'usuarios:paquete_diamante' %}" class="footer-link">paquete diamante</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </footer>
 
     <script>
     function changeImage(element) {
