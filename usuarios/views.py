@@ -35,7 +35,7 @@ def login_view(request):
                 request.session['cliente_id'] = cliente.id
                 request.session['cliente_nombre'] = cliente.nombre
                 # Redirigimos a la página de bienvenida
-                return redirect('usuarios:inicio')
+                return redirect('usuarios:gracias')
             else:
                 error = "Contraseña incorrecta"
         except RegistroCliente.DoesNotExist:
@@ -61,12 +61,12 @@ def logout_view(request):
 
 def paquetes(request):
     #Verificar que el usuario esté logueado
-    cliente_id = request.session.get('cliente_id')
-    if not cliente_id:
-        return redirect('usuarios:login')
+    #cliente_id = request.session.get('cliente_id')
+    #if not cliente_id:
+        #return redirect('usuarios:login')
     
     #Obtener las reservas del cliente 
-    paquetes = Paquete.objects.filter(usuario_id=cliente_id)
+    #paquetes = Paquete.objects.filter(usuario_id=cliente_id)
     return render(request,'usuarios/paquetes.html', {'paquetes':paquetes})
 
 from django.shortcuts import render
