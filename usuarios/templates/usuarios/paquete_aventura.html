@@ -159,7 +159,85 @@
             </div>
 
             <p><strong>Total estimado: $295.000</strong></p>
-            <button class="btn btn-primary w-100">Reservar ahora</button>
+            <button class="btn btn-primary w-100" id="btnReservar">Reservar ahora</button>
+
+<!-- Notificación en la parte inferior -->
+    <div id="notification" class="google-notification">
+    <div class="notification-content">
+        <span class="notification-icon">✓</span>
+        <span class="notification-text">¡Reserva realizada con éxito!</span>
+    </div>
+    </div>
+
+    <style>
+    /* Estilo de la notificación */
+    .google-notification {
+        position: fixed;
+        bottom: -100px; /* Inicialmente oculta */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #34a853; /* Verde de Google */
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        transition: bottom 0.5s ease-in-out;
+        max-width: 90%;
+    }
+    
+    .google-notification.show {
+        bottom: 20px; /* Posición visible */
+    }
+    
+    .notification-icon {
+        font-weight: bold;
+        margin-right: 12px;
+        font-size: 20px;
+    }
+    
+    .notification-text {
+        font-family: 'Roboto', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    /* Efecto de desvanecimiento al ocultarse */
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+    
+    .google-notification.hide {
+        animation: fadeOut 0.5s ease-in-out forwards;
+    }
+    </style>
+
+    <script>
+    document.getElementById('btnReservar').addEventListener('click', function() {
+    const notification = document.getElementById('notification');
+    
+    // Resetear cualquier animación previa
+    notification.classList.remove('show', 'hide');
+    void notification.offsetWidth; // Forzar reflow
+    
+    // Mostrar la notificación
+    notification.classList.add('show');
+    
+    // Ocultar después de 3 segundos
+    setTimeout(function() {
+        notification.classList.add('hide');
+        
+        // Remover completamente después de la animación
+        setTimeout(function() {
+        notification.classList.remove('show', 'hide');
+        }, 500);
+    }, 3000);
+});
+</script>
+
+
         </div>
         </div>
     </div>
