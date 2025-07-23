@@ -144,26 +144,26 @@ body {
 
 
 
+
 /*  STATS SECTION  */
 .stats-section {
     background: #fff;
     padding: 3rem 0;
-    margin-top: 10px;
+    
 }
 
-.stats-section .container {
-    max-width: 1000px; 
-}
+/* .stats-section .container {
+    padding: 0 15px;
+} */
 
 .stats-section .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 4rem;
     padding: 1rem 0;
 }
 
-.stats-section [class*="col-"] {
+.stats-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,14 +171,14 @@ body {
     background: rgba(233, 246, 253, 0.3);
     border-radius: 12px;
     transition: all 0.3s ease;
-    flex: 1 1 200px;
-    max-width: 220px;
+    height: 100%; 
 }
 
-.stats-section [class*="col-"]:hover {
+.stats-card:hover {
     background: rgba(233, 246, 253, 0.6);
     transform: translateY(-5px);
 }
+
 
 .stats-icon {
     width: 60px;
@@ -222,6 +222,18 @@ body {
         padding: 1rem;
     }
 }
+
+@media (min-width: 1400px) {
+    
+    .stats-number {
+        font-size: 2rem;
+    }
+    .stats-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
 /* tarjetas populares */
 
 .popular-section {

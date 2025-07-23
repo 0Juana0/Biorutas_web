@@ -54,7 +54,7 @@
                             <i class="bi bi-person-fill"></i> Iniciar sesión
                         </a>
                     </li>
-                    <li class="nav-item dropdown language-selector">
+                    <!-- <li class="nav-item dropdown language-selector">
                         <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-globe me-1"></i> ES
                         </a>
@@ -63,29 +63,35 @@
                             <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
                             <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
 </header>
 
-    <main class="container-fluid home-hero">
-        <div class="row align-items-center min-vh-100">
-            <div class="col-lg-6 py-5 texto-derecha">
+    <main class="home-hero">
+    <div class="container-fluid px-5">
+        <div class="row align-items-center justify-content-center min-vh-100">
+            <!-- Columna de texto -->
+            <div class="col-12 col-lg-6 py-5 texto-derecha text-center text-lg-start">
                 <p class="text-primary fw-bold mb-2">LOS MEJORES DESTINOS</p>
                 <h1 class="display-2 fw-bold mb-3 animate-viajera">
                     Viaja, <span class="underline animate-viajera">disfruta</span><br>
                     y vive una vida<br>
                     nueva y plena
                 </h1>
-                <p class="mb-4 text-secondary" style="max-width: 400px">
+                <p class="mb-4 text-secondary mx-auto mx-lg-0" style="max-width: 400px">
                     Viajar es descubrir que el mundo es mucho más grande que tus sueños y más generoso que tus miedos.
                 </p>
-                <a href="{% url 'usuarios:paquetes' %}" class="btn btn-primary btn-lg px-4">DESCUBRE MAS</a>
+                <a href="{% url 'usuarios:paquetes' %}" class="btn btn-primary btn-lg px-4">DESCUBRE MÁS</a>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-center position-relative">
-                <img src="{% static 'usuarios/img/viajera.png' %}" alt="Mujer viajera" class="img-fluid hero-img animate-viajera" loading="lazy">
+
+            <!-- Columna con imagen -->
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center position-relative mt-5 mt-lg-0">
+                <img src="{% static 'usuarios/img/viajera.png' %}" alt="Mujer viajera"
+                    class="img-fluid hero-img animate-viajera" loading="lazy">
+
                 <!-- Aviones decorativos -->
                 <svg class="plane plane-1" width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
                     <path d="M10 30 L50 30 L30 10 L30 50 Z" fill="#009fe3"/>
@@ -95,35 +101,38 @@
                 </svg>
             </div>
         </div>
-    </main>
+    </div>
+</main>
+
 
     <!-- Sección de estadísticas -->
     <section class="stats-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-3">
-                    <img src="{% static 'usuarios/img/Section → 1.svg.png' %}" alt="Rutas totales" class="stats-icon" loading="lazy">
-                    <h3 class="stats-number">932M</h3>
-                    <p class="stats-label">Rutas totales</p>
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="{% static 'usuarios/img/Section → 2.svg.png' %}" alt="Campañas cerradas" class="stats-icon" loading="lazy">
-                    <h3 class="stats-number">24M</h3>
-                    <p class="stats-label">Campañas cerradas</p>
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="{% static 'usuarios/img/Section → 3.svg.png' %}" alt="Gente feliz" class="stats-icon" loading="lazy">
-                    <h3 class="stats-number">10M</h3>
-                    <p class="stats-label">Gente feliz</p>
-                </div>
-                <div class="col-6 col-md-3">
-                    <img src="{% static 'usuarios/img/Section → 4.svg.png' %}" alt="Voluntarios" class="stats-icon" loading="lazy">
-                    <h3 class="stats-number">65M</h3>
-                    <p class="stats-label">Nuestros voluntarios</p>
-                </div>
-            </div>
+    <div class="container-fluid">
+        <div class="row g-4 text-center justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+            <img src="{% static 'usuarios/img/Section → 1.svg.png' %}" alt="Rutas totales" class="stats-icon" loading="lazy">
+            <h3 class="stats-number">932M</h3>
+            <p class="stats-label">Rutas totales</p>
         </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+            <img src="{% static 'usuarios/img/Section → 2.svg.png' %}" alt="Campañas cerradas" class="stats-icon" loading="lazy">
+            <h3 class="stats-number">24M</h3>
+            <p class="stats-label">Campañas cerradas</p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+            <img src="{% static 'usuarios/img/Section → 3.svg.png' %}" alt="Gente feliz" class="stats-icon" loading="lazy">
+            <h3 class="stats-number">10M</h3>
+            <p class="stats-label">Gente feliz</p>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+            <img src="{% static 'usuarios/img/Section → 4.svg.png' %}" alt="Voluntarios" class="stats-icon" loading="lazy">
+            <h3 class="stats-number">65M</h3>
+            <p class="stats-label">Nuestros voluntarios</p>
+        </div>
+        </div>
+    </div>
     </section>
+
 
     <!-- Sección de Video -->
 <section class="video-promo">
