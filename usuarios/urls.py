@@ -11,7 +11,6 @@ urlpatterns = [
     path('inicio/', views.inicio, name='inicio'),
     path('logout/', views.logout_view, name='logout'),
     path('paquetes/', views.paquetes, name='paquetes'),
-    path('paquete-diamante/', views.paquete_diamante, name='paquete_diamante'),
     path('paquete-oro/',       views.crear_reserva, {'paquete_nombre': 'oro'},       name='paquete_oro'),
     path('paquete-diamante/',  views.crear_reserva, {'paquete_nombre': 'diamante'},  name='paquete_diamante'),
     path('paquete-platino/',   views.crear_reserva, {'paquete_nombre': 'platino'},   name='paquete_platino'),
