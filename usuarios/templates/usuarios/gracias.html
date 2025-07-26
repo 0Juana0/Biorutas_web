@@ -40,10 +40,10 @@
                         <a class="nav-link" href="{% url 'usuarios:paquetes' %}">Paquetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hoteles</a>
+                        <a class="nav-link" href="{% url 'usuarios:hoteles' %}">Hoteles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Vuelos</a>
+                        <a class="nav-link" href="{% url 'usuarios:vuelos' %}">Vuelos</a>
                     </li>
                 </ul>
                 
@@ -342,7 +342,8 @@
             <ul class="col-list">
             <li><a href="{% url 'usuarios:gracias' %}" class="footer-link">Inicio</a></li>
             <li><a href="{% url 'usuarios:paquetes' %}" class="footer-link">Paquetes</a></li>
-            <li><a href="#" class="footer-link">Hoteles</a></li>
+            <li><a href="{% url 'usuarios:hoteles' %}" class="footer-link">Hoteles</a></li>
+            <li><a href="{% url 'usuarios:vuelos' %}" class="footer-link">Vuelos</a></li>
             </ul>
         </div>
 
