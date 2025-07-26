@@ -71,7 +71,6 @@ def paquetes(request):
     #paquetes = Paquete.objects.filter(usuario_id=cliente_id)
     return render(request,'usuarios/paquetes.html', {'paquetes':paquetes})
 
-from django.shortcuts import render
 
 def paquete_diamante(request):
     return render(request, 'usuarios/paquete_diamante.html')
@@ -145,8 +144,6 @@ def crear_reserva(request, paquete_nombre):
     template = f'usuarios/paquete_{paquete_nombre}.html'
     return render(request, template, context)
 
-# usuarios/views.py
-from django.shortcuts import render
 
 def gracias_reserva(request):
     """
@@ -159,3 +156,8 @@ def hoteles(request):
 
 def vuelos(request):
     return render(request, 'usuarios/vuelos.html')
+
+from django.shortcuts import render
+
+def reset_password(request):
+    return render(request, 'usuarios/reset_password.html')

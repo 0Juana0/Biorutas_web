@@ -23,7 +23,7 @@
     {% endif %}
 
     <!-- Formulario -->
-    <form method="post" action="{% url 'usuarios:gracias' %}">
+    <form method="post" action="{% url 'usuarios:login' %}">
       {% if next %}
         <input type="hidden" name="next" value="{{ next }}">
       {% endif %}
@@ -35,10 +35,11 @@
     </form>
 
     <a href="{% url 'usuarios:registro_cliente' %}" class="btn btn-dark w-100 mb-2 text-white">Regístrate</a>
-    <a href="#" class="d-block mb-3 small">¿Olvidaste tu contraseña?</a>
+    <a href="{% url 'usuarios:reset_password' %}" class="d-block mb-3 small">¿Olvidaste tu contraseña?</a>
 
     <hr>
 
+    <!-- Botón de Google (opcional) -->
     <!-- <button class="btn btn-light border w-100">
       <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google" width="20" class="me-2">
       Continuar con Google
