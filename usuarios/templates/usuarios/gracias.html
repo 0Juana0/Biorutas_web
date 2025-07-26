@@ -134,19 +134,19 @@
     </section>
 
 
-    <!-- Sección de Video -->
-<section class="video-promo">
+   <section class="video-promo py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-5">
-                <h2 class="video-title">Vive la aventura</h2>
+                <h2 class="video-title display-4 mb-4">Vive la aventura</h2>
+                <p class="lead">Descubre experiencias únicas que te esperan</p>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-9">
-                <div class="video-wrapper text-center">
-                    <!-- Video local -->
-                    <video controls width="100%" preload="auto">
+            <div class="col-lg-10">
+                <div class="video-wrapper rounded-lg overflow-hidden shadow-lg">
+                    <!-- Video con autoplay, muteado (requerido para autoplay en muchos navegadores) -->
+                    <video autoplay muted loop playsinline width="100%" preload="auto">
                         <source src="{% static 'usuarios/img/video.mp4' %}" type="video/mp4">
                         Tu navegador no soporta el elemento de video.
                     </video>
@@ -217,7 +217,7 @@
     <section class="special-offers-section py-4">
         <div class="container">
             <div class="d-flex justify-content-center mb-3">
-                <h2 class="section-title text-center">ofertas</h2>
+                <h2 class="section-title text-center">Ofertas</h2>
                 
             </div>
             <div class="special-offers-row">
