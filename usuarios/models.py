@@ -30,6 +30,9 @@ class RegistroCliente(models.Model):
     contraseña = models.CharField(max_length=128) 
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
 class Paquete(models.Model):
     ESTADOS = [
         ('pendiente', 'Pendiente'),
@@ -45,3 +48,20 @@ class Paquete(models.Model):
 def __str__(self):
         return f"{self.nombre} {self.apellido}"
 
+class Reserva(models.Model):
+    cliente = models.ForeignKey(
+        RegistroCliente,
+        on_delete=models.CASCADE,
+        null=True,       # ← permite NULL
+        blank=True       # ← permite dejar vacío en formularios/admin
+    )
+    paquete = models.CharField(max_length=100)  # Identificador del paquete
+    fecha_tour = models.DateField()
+    cantidad_personas = models.IntegerField()
+    extra_guia_bilingue = models.BooleanField(default=False)
+    extra_souvenir = models.BooleanField(default=False)
+    extra_seguro_viaje = models.BooleanField(default=False)
+    total_estimado = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+
+    def __str__(self):
+        return f"Reserva de {self.cliente.nombre} {self.cliente.apellido} para {self.fecha_tour}"

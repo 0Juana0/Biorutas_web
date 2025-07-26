@@ -133,34 +133,48 @@
         </div>
 
         <!-- Formulario reserva tipo panel -->
-        <div class="col-lg-4">
-        <div class="card p-4 shadow sticky-box" id="reservaBox">
-            <h5 class="fw-bold mb-3">Desde $250.000</h5>
-            <hr>
-            <label class="form-label">Fecha del tour</label>
-            <input type="date" class="form-control mb-3">
+            {% block content %}
+            <div class="col-lg-4">
+                <div class="card p-4 shadow sticky-box" id="reservaBox">
+                    <h5 class="fw-bold mb-3">Desde $250.000</h5>
+                    <hr>
+                    <form method="post">
+                        {% csrf_token %}
+                        <label class="form-label">Fecha del tour</label>
+                        <input type="date" class="form-control mb-3" name="fecha_tour" required>
 
-            <label class="form-label">Cantidad de personas</label>
-            <input type="number" class="form-control mb-3">
+                        <label class="form-label">Cantidad de personas</label>
+                        <input type="number" class="form-control mb-3" name="cantidad_personas" required>
 
-            <label class="form-label">Extras:</label><br>
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="extra1">
-            <label class="form-check-label" for="extra1">Guía bilingüe (+$20.000)</label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="extra2">
-            <label class="form-check-label" for="extra2">Souvenir local (+$10.000)</label>
-            </div>
-            <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="extra3">
-            <label class="form-check-label" for="extra3">Seguro de viaje (+$15.000)</label>
+                        <label class="form-label">Extras:</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="extra1" name="extra_guia_bilingue">
+                            <label class="form-check-label" for="extra1">Guía bilingüe (+$20.000)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="extra2" name="extra_souvenir">
+                            <label class="form-check-label" for="extra2">Souvenir local (+$10.000)</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="extra3" name="extra_seguro_viaje">
+                            <label class="form-check-label" for="extra3">Seguro de viaje (+$15.000)</label>
+                        </div>
+
+                        <p><strong>Total estimado: $295.000</strong></p>
+                        <button type="submit" class="btn btn-primary w-100">Reservar ahora</button>
+                                    <!-- Mostrar mensajes -->
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {% endblock %}
+                    </form>
+                </div>
             </div>
 
-            <p><strong>Total estimado: $295.000</strong></p>
-            <button class="btn btn-primary w-100">Reservar ahora</button>
-        </div>
-        </div>
     </div>
     </div>
     <footer class="bio-footer">

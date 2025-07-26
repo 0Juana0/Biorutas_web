@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.hashers import make_password
-from .forms import RegistroClienteForm
+from .forms import RegistroClienteForm, ReservaForm
 from django.contrib.auth.hashers import check_password 
 from .models import RegistroCliente, Paquete
 
@@ -74,8 +75,8 @@ from django.shortcuts import render
 def paquete_diamante(request):
     return render(request, 'usuarios/paquete_diamante.html')
 
-def paquete_oro(request):
-    return render(request, 'usuarios/paquete_oro.html')
+#def paquete_oro(request):
+ #   return render(request, 'usuarios/paquete_oro.html')
 
 def paquete_platino(request):
     return render(request, 'usuarios/paquete_platino.html')
@@ -88,3 +89,35 @@ def paquete_zafiro(request):
 
 def paquete_aventura(request):
     return render(request, 'usuarios/paquete_aventura.html')
+
+def crear_reserva(request):
+    if request.method == 'POST':
+        form = ReservaForm(request.POST)
+        if form.is_valid():
+            reserva = form.save(commit=False)
+
+            # 1) Si hay cliente en sesión, lo asignamos
+            cliente_id = request.session.get('cliente_id')
+            if cliente_id:
+                reserva.cliente = RegistroCliente.objects.get(id=cliente_id)
+
+            # 2) Guardamos la reserva sin cliente si no hay sesión
+            reserva.paquete = 'Oro'
+            total_base = 250000
+            if reserva.extra_guia_bilingue:
+                total_base += 20000
+            if reserva.extra_souvenir:
+                total_base += 10000
+            if reserva.extra_seguro_viaje:
+                total_base += 15000
+            reserva.total_estimado = total_base
+            reserva.save()
+
+            messages.success(request, 'Reserva creada temporalmente sin cliente.')
+            return redirect('usuarios:paquete_oro')
+        else:
+            messages.error(request, form.errors)
+    else:
+        form = ReservaForm()
+
+    return render(request, 'usuarios/paquete_oro.html', {'form': form})

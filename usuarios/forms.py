@@ -1,5 +1,5 @@
 from django import forms 
-from .models import RegistroCliente
+from .models import RegistroCliente, Reserva
 from django.core.exceptions import ValidationError
 
 class RegistroClienteForm(forms.ModelForm):
@@ -24,3 +24,15 @@ class RegistroClienteForm(forms.ModelForm):
         if password and confirm and password != confirm: 
             self.add_error('confirmar_contraseña', 'Las contraseñas no coinciden.')
         return cleaned_data
+    
+class ReservaForm(forms.ModelForm):
+    class Meta:
+        model = Reserva
+        fields = ['fecha_tour', 'cantidad_personas', 'extra_guia_bilingue', 'extra_souvenir', 'extra_seguro_viaje']
+        widgets = {
+            'fecha_tour': forms.DateInput(attrs={'type': 'date'}),
+            'cantidad_personas': forms.NumberInput(attrs={'type': 'number'}),
+            'extra_guia_bilingue': forms.CheckboxInput(),
+            'extra_souvenir': forms.CheckboxInput(),
+            'extra_seguro_viaje': forms.CheckboxInput(),
+        }
