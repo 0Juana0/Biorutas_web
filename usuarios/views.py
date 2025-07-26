@@ -76,8 +76,8 @@ from django.shortcuts import render
 def paquete_diamante(request):
     return render(request, 'usuarios/paquete_diamante.html')
 
-#def paquete_oro(request):
- #   return render(request, 'usuarios/paquete_oro.html')
+def paquete_oro(request):
+    return render(request, 'usuarios/paquete_oro.html')
 
 def paquete_platino(request):
     return render(request, 'usuarios/paquete_platino.html')
