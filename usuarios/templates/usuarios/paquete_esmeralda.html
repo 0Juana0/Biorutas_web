@@ -131,35 +131,55 @@
       </div>
     </div>
 
-    <!-- Formulario reserva tipo panel -->
-    <div class="col-lg-4">
-      <div class="card p-4 shadow sticky-box" id="reservaBox">
-        <h5 class="fw-bold mb-3">Desde $250.000</h5>
-        <hr>
-        <label class="form-label">Fecha del tour</label>
-        <input type="date" class="form-control mb-3">
+        <!-- Formulario reserva tipo panel -->
+        <div class="col-lg-4">
+        <div class="card p-4 shadow sticky-box" id="reservaBox">
+            <h5 class="fw-bold mb-3">Desde ${{ precio_base|floatformat:"0" }}</h5>
+            <hr>
 
-        <label class="form-label">Cantidad de personas</label>
-        <input type="number" class="form-control mb-3">
+            <form method="post" id="formReserva">
+            {% csrf_token %}
 
-        <label class="form-label">Extras:</label><br>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="extra1">
-          <label class="form-check-label" for="extra1">Guía bilingüe (+$20.000)</label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="extra2">
-          <label class="form-check-label" for="extra2">Souvenir local (+$10.000)</label>
-        </div>
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="extra3">
-          <label class="form-check-label" for="extra3">Seguro de viaje (+$15.000)</label>
-        </div>
+            <!-- Campo fecha -->
+            <label class="form-label">Fecha del tour</label>
+            {{ form.fecha_tour|add_class:"form-control mb-3" }}
 
-        <p><strong>Total estimado: $295.000</strong></p>
-        <button class="btn btn-primary w-100">Reservar ahora</button>
-      </div>
-    </div>
+            <!-- Campo personas -->
+            <label class="form-label">Cantidad de personas</label>
+            {{ form.cantidad_personas|add_class:"form-control mb-3" }}
+
+            <!-- Extras -->
+            <label class="form-label">Extras:</label>
+            <div class="form-check">
+                {{ form.extra_guia_bilingue }}
+                <label class="form-check-label" for="{{ form.extra_guia_bilingue.id_for_label }}">
+                Guía bilingüe (+$20.000)
+                </label>
+            </div>
+            <div class="form-check">
+                {{ form.extra_souvenir }}
+                <label class="form-check-label" for="{{ form.extra_souvenir.id_for_label }}">
+                Souvenir local (+$10.000)
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                {{ form.extra_seguro_viaje }}
+                <label class="form-check-label" for="{{ form.extra_seguro_viaje.id_for_label }}">
+                Seguro de viaje (+$15.000)
+                </label>
+            </div>
+
+            <!-- Total dinámico -->
+            <p>
+                <strong>Total estimado:
+                <span id="totalDisplay">${{ precio_base|floatformat:"0" }}</span>
+                </strong>
+            </p>
+
+            <button type="submit" class="btn btn-primary w-100">Reservar ahora</button>
+            </form>
+        </div>
+        </div>
   </div>
 </div>
 <footer class="bio-footer">
@@ -214,6 +234,30 @@
         </div>
     </div>
     </footer>
+        <script>
+    // Precio base viene del contexto
+    const precioBase = {{ precio_base }};
+    const extras = {
+        extra_guia_bilingue: 20000,
+        extra_souvenir: 10000,
+        extra_seguro_viaje: 15000,
+    };
+
+    function calcularTotal() {
+        let total = precioBase;
+        for (const [id, valor] of Object.entries(extras)) {
+        if (document.getElementById(`id_${id}`).checked) total += valor;
+        }
+        document.getElementById('totalDisplay').textContent = total.toLocaleString('es-CL');
+    }
+
+    // Escuchar cambios
+    document.querySelectorAll('#formReserva input[type=checkbox]').forEach(el =>
+        el.addEventListener('change', calcularTotal)
+    );
+    // Primer cálculo al cargar
+    calcularTotal();
+    </script>
 <script>
   function changeImage(element) {
     document.getElementById('mainImage').src = element.src;

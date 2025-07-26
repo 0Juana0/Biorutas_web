@@ -5,6 +5,7 @@ from .forms import RegistroClienteForm, ReservaForm
 from django.contrib.auth.hashers import check_password 
 from .models import RegistroCliente, Paquete
 
+
 def registro_cliente(request):
     if request.method == 'POST':
         form = RegistroClienteForm(request.POST)
@@ -90,34 +91,71 @@ def paquete_zafiro(request):
 def paquete_aventura(request):
     return render(request, 'usuarios/paquete_aventura.html')
 
-def crear_reserva(request):
+# Precios base (lo puedes mover a un modelo o settings más adelante)
+PRECIOS_BASE = {
+    'oro':       250000,
+    'diamante':  350000,
+    'platino':   400000,
+    'esmeralda': 200000,
+    'zafiro':    220000,
+    'aventura':  180000,
+}
+
+def crear_reserva(request, paquete_nombre):
+    paquete_nombre = paquete_nombre.lower()
+    if paquete_nombre not in PRECIOS_BASE:
+        messages.error(request, 'Paquete no válido.')
+        return redirect('inicio')
+
     if request.method == 'POST':
         form = ReservaForm(request.POST)
         if form.is_valid():
             reserva = form.save(commit=False)
 
-            # 1) Si hay cliente en sesión, lo asignamos
+            # Asignar el paquete
+            reserva.paquete = paquete_nombre.capitalize()
+
+            # Calcular total
+            total = PRECIOS_BASE[paquete_nombre]
+            if reserva.extra_guia_bilingue:
+                total += 20000
+            if reserva.extra_souvenir:
+                total += 10000
+            if reserva.extra_seguro_viaje:
+                total += 15000
+            reserva.total_estimado = total
+
+            # Cliente (opcional por ahora)
             cliente_id = request.session.get('cliente_id')
             if cliente_id:
+                from .models import RegistroCliente
                 reserva.cliente = RegistroCliente.objects.get(id=cliente_id)
 
-            # 2) Guardamos la reserva sin cliente si no hay sesión
-            reserva.paquete = 'Oro'
-            total_base = 250000
-            if reserva.extra_guia_bilingue:
-                total_base += 20000
-            if reserva.extra_souvenir:
-                total_base += 10000
-            if reserva.extra_seguro_viaje:
-                total_base += 15000
-            reserva.total_estimado = total_base
             reserva.save()
-
-            messages.success(request, 'Reserva creada temporalmente sin cliente.')
-            return redirect('usuarios:paquete_oro')
-        else:
-            messages.error(request, form.errors)
+            messages.success(request, f'¡Reserva del paquete {reserva.paquete} confirmada!')
+            return redirect('usuarios:gracias_reserva')
     else:
         form = ReservaForm()
 
-    return render(request, 'usuarios/paquete_oro.html', {'form': form})
+    context = {
+        'form': form,
+        'paquete_nombre': paquete_nombre,
+        'precio_base': PRECIOS_BASE[paquete_nombre],
+    }
+    template = f'usuarios/paquete_{paquete_nombre}.html'
+    return render(request, template, context)
+
+# usuarios/views.py
+from django.shortcuts import render
+
+def gracias_reserva(request):
+    """
+    Muestra la página de confirmación de reserva.
+    """
+    return render(request, 'usuarios/gracias_reserva.html')
+
+def hoteles(request):
+    return render(request, 'usuarios/hoteles.html')
+
+def vuelos(request):
+    return render(request, 'usuarios/vuelos.html')
